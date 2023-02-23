@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    if(document.cookie.indexOf('UsrEmail')>-1){
+        window.open('add','_self','','false')
+    }
+    
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/585fda3aab.js" crossorigin="anonymous"></script>
+<body>
+    <div class="login-box">
+        <h2>Welcome </h2>
+        <p>Enter your details</p>
+
+        <form action="">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <i class="fa-solid fa-user"></i>
+                    <input type="email" name="email" placeholder="email" required>
+            </div>
+             <div class="form-group">
+                <label for="password">Password</label>
+                    <input type="password"  name="password"  placeholder="Your password"  required>
+             </div>
+             <input type="submit" class="btn" value="Log In">
+        </form>
+        <!-- <div>
+            <a href="#" class="btn">Log In</a>
+        </div> -->
+            <!-- <div>
+            <a href="#" class="forgot">
+                Forgot Your Password?
+            </a>
+            </div> -->
+    </div>
+
+    <script type="module" src="mn.js"></script>
+</body>
+</html>

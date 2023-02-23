@@ -341,3 +341,6 @@ table th {
 table tda {
     text-decoration:  underline;
 }
+.tst{
+    border-radius: 3px;
+}
