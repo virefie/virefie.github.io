@@ -1,11 +1,17 @@
 function rslt(e) {
     get(child(dbRef, `${e}/`)).then(t => {
-        aSn[e] = Object.entries(t.val()), localStorage.setItem("lst" + e, JSON.stringify(aSn[e])), stlstPg(e)
+        aSn[e] = Object.entries(t.val());
+        localStorage.setItem("lst" + e, JSON.stringify(aSn[e])), stlstPg(e)
     })
 }
-
+function compareNumbers(a, b) {
+    a=a[0];b=b[0];
+    a=a.slice(1,a.length);b=b.slice(1,b.length);
+    return a - b;
+  }
 function stlstPg(e) {
     let t = "";
+    aSn[e].sort(compareNumbers);console.log(aSn[e]);
     aSn[e].forEach(a => {
         let l = a[1][1].length > 0 ? "https://www.facebook.com/" + a[1][1] : "",
             s = a[1][2].length > 0 ? "0079999900" + a[1][2] : "";
@@ -14,7 +20,7 @@ function stlstPg(e) {
 }
 
 function afchRslt(e) {
-    console.log(emails); console.log(Ccps); console.log(fcbs);
+    //console.log(['Array'].forEach);console.log(fcbs);
     if (gebi("cntnr").style.display = "flex", setTimeout(() => {
         dv.className += " opPlc"
     }, 0), "Uncertain" == e.vl) return dv.innerHTML = '<span class="clear" onclick="hiding()">×</span>\n       <div class="Uncertain hidplac">\n      <h2>لم يتم التأكد من مصداقية هد الحساب</h2>\n      <span> ليس لدينا معلوما حول هذا الحساب يرجى مساعدتنا عبر صفحتنا على الفيسبوك </span><a href="https://www.facebook.com/profile.php?id=100089115259293" >  مكافحة النصب الإلكتروني</a>\n      </div> ', 0;
@@ -42,7 +48,7 @@ import {
 class base {
     valed = [];
     Fake = [];
-    getInd = function (e) {
+    getInd (e) {
         let t = this.valed.indexOf(e);
         return t > -1 ? {
             vl: "valed",
@@ -87,7 +93,3 @@ dv.addEventListener("click", e => {
     if (l > -1 && afchRslt(fcbs.getInd(a.slice(l + "facebook.com".length, s))), !isNaN(a)) return 20 == s && 0 == a.indexOf("0079999900") && (a = a.slice(10, 20)), 12 == s && 0 == a.indexOf("00") && (a = a.slice(2, 12)), 10 != a.length ? (t(), 0) : (afchRslt(Ccps.getInd(a)), 0);
     a.indexOf("@") > 0 ? afchRslt(emails.getInd(a)) : t()
 }), window.hiding = hiding;
-function tst(params) {
-    console.log('tsy', params);
-}
-tst()

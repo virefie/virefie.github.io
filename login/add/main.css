@@ -170,7 +170,8 @@ form .form-group label {
     color: #404040;
 }
 
-form .form-group input:not([type = radio]) {
+form .form-group input:not([type = radio]),
+    textarea {
     width: 100%;
     height: 40px;
     margin-top: 6px;
@@ -187,18 +188,22 @@ form .form-group input[type = radio]{
     height: 15px;
     width: 30px;
 }
-form .form-group input:focus{
+form .form-group input:focus,textarea{
     border-color: #124ce7;
     outline: none;
     box-shadow: 0 0 12px #bbd3ff;
 }
 
 
-form .form-group input:valid{
+form .form-group input:valid,textarea{
     border-color: #124ce7;
     background: #e4edff;
 }
 
+form .form-group textarea{
+    height: 80px;
+    padding: 10px 12px 0 34px;
+}
 
 .form-group i {
     position: absolute;
@@ -323,5 +328,6 @@ h1{
 .vlfkdiv{
     display: none;
     overflow: hidden;
+    flex-direction: column-reverse;
     margin: 20px 0;
 }

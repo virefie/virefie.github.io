@@ -323,6 +323,14 @@ table {
     text-align:  center;
     background-color:  #f2f2f2;
 }
+table tbody{
+    display: flex;
+    flex-direction: column-reverse;
+}
+table tr{
+    justify-content: center;
+    display: flex;
+}
 table td , table th {
     text-align:  center;
     display:  inline-flex;
@@ -344,3 +352,4 @@ table tda {
 .tst{
     border-radius: 3px;
 }
+

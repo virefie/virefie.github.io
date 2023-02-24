@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script>
-    if(document.cookie.indexOf('UsrEmail')>-1){
+    if(document.cookie.includes('enter')){
         window.open('add','_self','','false')
     }
     
@@ -24,10 +24,12 @@
                 <label for="email">Email</label>
                 <i class="fa-solid fa-user"></i>
                     <input type="email" name="email" placeholder="email" required>
+                    <p id="errEmail" style="color:red;display: none;">هذا الحساب خاطئ</p>
             </div>
              <div class="form-group">
                 <label for="password">Password</label>
                     <input type="password"  name="password"  placeholder="Your password"  required>
+                    <p id="errPaswrd" style="color:red;display: none;">كلمة السر خاطئة</p>
              </div>
              <input type="submit" class="btn" value="Log In">
         </form>

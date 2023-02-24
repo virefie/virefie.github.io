@@ -17,8 +17,14 @@
 html{
     scroll-behavior: smooth;
 }
-
-
+tbody{
+    display: flex;
+    flex-direction: column-reverse;
+}
+table tr{
+    justify-content: center;
+    display: flex;
+}
 ul{
     list-style: none;
 }
