@@ -78,7 +78,7 @@ if (namePg == '') {
     set(ref(database, 'updatV/vr'+ chPg), vUp['lvr'+chPg])
     .then(()=>{
       if (idUpdt == '') {
-        stId = 'P0' + vUp['lvr'+chPg];
+        stId = 'P' + vUp['lvr'+chPg];
         apdorSt(set);
       } else {
         stId = idUpdt;
@@ -92,7 +92,7 @@ if (namePg == '') {
     set(ref(database, 'updatV/vrvaled'), vUp.lvrvaled);
     set(ref(database, 'updatV/vrFake'), vUp.lvrFake)
     .then(()=>{
-      stId = 'P0' +vUp['lvr'+chPg];
+      stId = 'P' +vUp['lvr'+chPg];
       remove(child(dbRef, idUpdt));
       apdorSt(set);
     });
@@ -167,19 +167,16 @@ console.log(mydt);
  */
 
 
-
+let cmprNmbr = (a, b)=> a.slice(1) - b.slice(1);
 rslt('valed');
 rslt('Fake');
-function compareNumbers(a, b) {
-  a=a.slice(1,a.length);b=b.slice(1,b.length);
-  return a - b;
-}
+
 function rslt(chPg) {
   get(child(dbRef, `${chPg}/`)).then((snp) => {
     /* snp =>  = snapshot */
     if (snp.exists()) {
       let lstPg = '', kys=Object.keys(snp.val());
-      kys.sort(compareNumbers);
+      kys.sort(cmprNmbr);
       aSn[chPg] = snp.val();
       
       kys.forEach(e=>{
