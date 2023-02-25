@@ -58,7 +58,6 @@ ul{
     display: flex;
     position: fixed;
     align-items: center;
-    margin-top: -80px;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
@@ -89,10 +88,7 @@ ul{
     display:  none;
 }
 header{
-    position: fixed;
-    z-index: 7;
     background-color: var(--section-background);
-    margin-top: -80px;
     padding: 10px;
     width: 100%;
 }
@@ -169,9 +165,8 @@ header .links ul li:not(:last-child) a{
 
 /* Start Form */
 .login-box{
-    height: min-content;
     width: 400px;
-    margin: 80px auto 0;
+    margin: 15px auto ;
     border-radius: 25px;
     background-color: #ffff;
     padding: 40px;
