@@ -3,7 +3,7 @@ import { push, update, remove, set } from "https://www.gstatic.com/firebasejs/9.
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 const auth = getAuth(app); const dbRef = ref(database);
 const edtSVG = '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.3 8.925-4.25-4.2 1.4-1.4q.575-.575 1.413-.575.837 0 1.412.575l1.4 1.4q.575.575.6 1.388.025.812-.55 1.387ZM17.85 10.4 7.25 21H3v-4.25l10.6-10.6Z"/></svg>';
-let frm = document.forms[0], idUpdt = '', aSn = {}, vUp = { lvrvaled: 0, lvrFake: 0 }, stId,vlFk;
+let frm = document.forms[0], idUpdt = '', aSn = {valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId,vlFk;
 
 gebi('logaut').onclick = () => {
   signOut(auth).then(() => { 
@@ -148,7 +148,7 @@ if (namePg == '') {
 function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: emailPg  }
   let fblien = aSn[1].length > 0 ? 'href="https://www.facebook.com/' + aSn[1]+'" target="_blank"' : '',
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : '';
-  return `<div id="${chPg}/${stId}" class="dvPlc">
+  return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
   <span class="cntnr">
   <span  onclick="dltdiv('${chPg}/${stId}')" class="clear" >×</span>
   <a href="#input-box" class="mdfSVG" onclick="upVlu('${chPg}','${stId}')">${edtSVG}</a>
@@ -181,16 +181,16 @@ function rslt(chPg) {
         lstPg += dvUpdt(chPg, e, aSn[chPg][e]);
       });
       gebi(`list${chPg}`).innerHTML = lstPg;
-      
-      
+     
     } else {
       gebi(`list${chPg}`).innerText = "No data available";
     }
+    if (chPg == 'Fake') {
+      gebi("plWt").className = "n";
+      gebi("lod").className = "n";
+    }
   })
-  if (chPg == 'Fake') {
-    gebi("plWt").className = "n";
-    gebi("lod").className = "n";
-  }
+  
 } 
 
 
