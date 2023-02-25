@@ -32,7 +32,7 @@
                     <span></span>
                 </span>
                 <ul>
-                    <li><a href="#allPages"> جميع الصفحات المسجلة</a></li>
+                    <li><a href="#allPages"> جميع الحسابات المسجلة</a></li>
                     <li id="logaut"><a href="#"> تسجيل الخروج</a></li>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
     <!-- Start Form -->
     <div id="input-box" class="login-box">
         <h2>مرحبا </h2>
-        <p>أدخل بيانات الصفحة</p>
+        <p>أدخل بيانات الحساب</p>
         
 
         <form>
@@ -53,7 +53,7 @@
                 <input type="text" id="name" name="namePg" />
             </div>
             <div class="form-group">
-                <label for="lienPage">رابط الصفحة</label>
+                <label for="lienPage">رابط الحساب</label>
                 <input type="url" id="lienPage" name="lienPg" />
                 <p id="msageUrl" style="display: none;color: red;">لديك خطأ في الرابط</p>
             </div>
@@ -67,7 +67,7 @@
                 <input type="email" id="emailPg"  name="emailPg" />
             </div>
             <div class="form-group">
-                <label for="idInfo">معلومات عن الصفحة </label>
+                <label for="idInfo">معلومات عن الحساب </label>
                 <textarea name="inf" id="idInfo"></textarea>
             </div>
             <div style="height: 10px;text-align: left;">
@@ -75,11 +75,11 @@
             <p id="errpush" style="display: none;color: red;">حدث خطأ أعد المحاولة</p>
             </div>
             <div class="form-group">
-                <label for="fcPage" style="color: red;">صفحة مزيفة</label>
+                <label for="fcPage" style="color: red;">حساب مزيفة</label>
                 <input type="radio" name="chPg" value="Fake" required />
             </div>
             <div class="form-group">
-                <label for="vlPage" style="color: green;">صفحة موثوقة</label>
+                <label for="vlPage" style="color: green;">حساب موثوقة</label>
                 <input type="radio" name="chPg" value="valed" required />
             </div>
             <input type="hidden" name="idUpdt" value="" >
@@ -95,12 +95,12 @@
     <!-- End Form -->
     
 
-    <h1 id="allPages">جميع الصفحات المسجلة</h1>
+    <h1 id="allPages">جميع الحسابات المسجلة</h1>
 
-    <h2 id="valPage" class="valdh2 h2lst"><span>▼</span> الصفحات الموثوقة </h2>
+    <h2 id="valPage" class="valdh2 h2lst"><span>▼</span> الحسابات الموثوقة </h2>
     <div id="listvaled" class="vlfkdiv" ></div>
 
-    <h2 id="valPage" class="fakeh2 h2lst"><span>▼</span> الصفحات المزورة </h2>
+    <h2 id="valPage" class="fakeh2 h2lst"><span>▼</span> الحسابات المزورة </h2>
     <div id="listFake" class="vlfkdiv"></div>
 
 
