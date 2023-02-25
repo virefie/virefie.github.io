@@ -4,15 +4,15 @@ function rslt(e) {
         localStorage.setItem("lst" + e, JSON.stringify(aSn[e])), stlstPg(e)
     })
 }
-
+/*  */
 
 function stlstPg(e) {
     let t = "",cmprNmbr = (a, b)=> a[0].slice(1) - b[0].slice(1);
     aSn[e].sort(cmprNmbr).forEach(a => {
-        let l = a[1][1].length > 0 ? "https://www.facebook.com/" + a[1][1] : "",
+        let l = a[1][1].length > 0 ? 'href="https://www.facebook.com/' + a[1][1] +'" target="_blank"':'',
             s = a[1][2].length > 0 ? "0079999900" + a[1][2] : "";
-        emails[e].push(a[1][3]), Ccps[e].push(a[1][2]), fcbs[e].push(a[1][1]), t += `<tr><td>${s}</td><td>${a[1][3]}</td>\n      <td><a href="${l}" target="_blank">${a[1][0]}</a><p>${a[1][4]}</p></td></tr>`
-    }), gebi("bdy" + e).innerHTML = t, gebi("tb" + e).style.display = "table","Fake" == e && (gebi("lod").className = "n", gebi("plWt").className = "n")
+        emails[e].push(a[1][3]), Ccps[e].push(a[1][2]), fcbs[e].push(a[1][1]), t += `<tr><td>${s}</td><td>${a[1][3]}</td><td><a ${l}>${a[1][0]}</a><p>${a[1][4]}</p></td></tr>`
+    }), gebi("bdy" + e).innerHTML = t,"Fake" == e && (gebi("lod").className = "n", gebi("plWt").className = "n")
 }
 
 function afchRslt(e) {

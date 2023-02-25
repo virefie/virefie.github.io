@@ -10,6 +10,7 @@
     box-sizing:  border-box;
     margin:  0;
     padding:  0;
+    -webkit-tap-highlight-color :transparent;
 }
 html {
     scroll-behavior:  smooth;
@@ -310,30 +311,36 @@ header .aboutUs:hover .aboutUsp {
     width:  70%;
     font-size:  25px;
 }
+}
+
 /* End Navbar */
-}.dsTbl {
+.dsTbl {
     text-align:  center;
     font-size:  33px;
     background-color:  #017f01;
     padding:  15px;
     color:  white;
-    margin:  20px 0;
+    margin:  20px auto;
 }
-table {
+table{
     width:  100%;
     font-size:  18px;
     border-spacing:  0px;
     margin-bottom:  50px;
     text-align:  center;
+    padding: 0;
     background-color:  #f2f2f2;
+    display: block;
 }
-table tbody{
+
+table > *{
     display: flex;
     flex-direction: column-reverse;
 }
 table tr{
     justify-content: center;
     display: flex;
+    flex: auto;
 }
 table td , table th {
     text-align:  center;

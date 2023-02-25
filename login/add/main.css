@@ -1,57 +1,64 @@
 /* Start Variabels */
-:root{
-    --main-color:#005aa6;
-    --section-background:#f6f6f6;
-    --section-padding:60px;
-    --main-durachen:0.3s
+:root {
+    --main-color: #005aa6;
+    --section-background: #f6f6f6;
+    --section-padding: 60px;
+    --main-durachen: 0.3s
 }
+
 /* End Variabels */
 /* Start Global Rules */
-*{
+* {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
 /* body {
     font-family: 'Cairo', sans-serif;
 } */
-ul{
+ul {
     list-style: none;
 }
- a{
+
+a {
     text-decoration: none;
-} 
-.container{
+}
+
+.container {
     padding-left: 15px;
     padding-right: 15px;
-    margin-left:auto ;
+    margin-left: auto;
     margin-right: auto;
 }
 
 /* Small */
 @media (min-width:768px) {
-    .container{
+    .container {
         width: 750px;
     }
 }
+
 /* Medium */
 @media (min-width:992px) {
-    .container{
+    .container {
         width: 970px;
     }
 }
+
 /* Large */
 @media (min-width:1200px) {
-    .container{
+    .container {
         width: 1170px;
     }
 }
+
 /* End Global Rules */
 /* Start Header */
 .loding {
@@ -66,63 +73,78 @@ ul{
     z-index: 10;
     background-color: white;
 }
+
 .loding img {
-    width:  50px;
+    width: 50px;
 }
+
 .loding .wt {
-    width:  40px;
-    height:  40px;
-    border-radius:  50%;
-    border:  5px solid #131e3a;
-    border-left-color:  transparent;
-    animation:  spin .7s linear infinite;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid #131e3a;
+    border-left-color: transparent;
+    animation: spin .7s linear infinite;
 }
+
 @keyframes spin {
     0% {
-    transform:  rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
-100% {
-    transform: rotate(360deg);
+
+.n {
+    display: none;
 }
-}.n {
-    display:  none;
-}
-header{
+
+header {
     background-color: var(--section-background);
     padding: 10px;
     width: 100%;
 }
-header .container{
+
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header .logo{
+
+header .logo {
     width: 40px;
 }
-header .links{
+
+header .links {
     position: relative;
 }
-header .links:hover .icon span:nth-child(2){
+
+header .links:hover .icon span:nth-child(2) {
     width: 100%;
 }
-header .links .icon{
+
+header .links .icon {
     width: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
-header .links .icon span{
+
+header .links .icon span {
     background-color: #333;
     margin-bottom: 5px;
     width: 100%;
     height: 2px;
 }
-header .links .icon span:nth-child(2){
+
+header .links .icon span:nth-child(2) {
     width: 60%;
     transition: var(--main-durachen);
 }
-header .links ul{
+
+header .links ul {
     margin: 0;
     padding: 0;
     background-color: var(--section-background);
@@ -135,10 +157,12 @@ header .links ul{
     text-align: right;
     display: none;
 }
-header .links:hover ul{
+
+header .links:hover ul {
     display: block;
 }
-header .links ul::before{
+
+header .links ul::before {
     content: "";
     content: "";
     position: absolute;
@@ -147,16 +171,19 @@ header .links ul::before{
     border: 10px solid;
     border-color: transparent transparent var(--section-background);
 }
-header .links ul li a{
+
+header .links ul li a {
     display: block;
     padding: 15px;
     color: #333;
     transition: var(--main-durachen);
 }
-header .links ul li a:hover{
+
+header .links ul li a:hover {
     padding-left: 25px;
 }
-header .links ul li:not(:last-child) a{
+
+header .links ul li:not(:last-child) a {
     border-bottom: 1px solid #ddd;
 
 }
@@ -164,9 +191,9 @@ header .links ul li:not(:last-child) a{
 /* End Header */
 
 /* Start Form */
-.login-box{
+.login-box {
     width: 400px;
-    margin: 15px auto ;
+    margin: 15px auto;
     border-radius: 25px;
     background-color: #ffff;
     padding: 40px;
@@ -174,7 +201,7 @@ header .links ul li:not(:last-child) a{
     text-align: center;
 }
 
-.login-box h2{
+.login-box h2 {
     font-size: 2.2rem;
     margin-bottom: 10px;
 }
@@ -185,22 +212,23 @@ header .links ul li:not(:last-child) a{
     margin-top: 4px;
     font-size: 1.2rem;
 }
-form{
+
+form {
     text-align: right;
-    margin: top 30px; 
+    margin: top 30px;
 }
 
-form .form-group{
+form .form-group {
     margin: 18px 0;
 }
 
 form .form-group label {
-    font-size: 20px; 
+    font-size: 20px;
     color: #404040;
 }
 
-form .form-group input:not([type = radio]),
-    textarea {
+form .form-group input:not([type=radio]),
+textarea {
     width: 100%;
     height: 40px;
     margin-top: 6px;
@@ -213,23 +241,27 @@ form .form-group input:not([type = radio]),
     text-align: right;
     display: block;
 }
-form .form-group input[type = radio]{
+
+form .form-group input[type=radio] {
     height: 15px;
     width: 30px;
 }
-form .form-group input:focus,textarea{
+
+form .form-group input:focus,
+textarea {
     border-color: #124ce7;
     outline: none;
     box-shadow: 0 0 12px #bbd3ff;
 }
 
 
-form .form-group input:valid,textarea{
+form .form-group input:valid,
+textarea {
     border-color: #124ce7;
     background: #e4edff;
 }
 
-form .form-group textarea{
+form .form-group textarea {
     height: 80px;
     padding: 10px 12px 0 34px;
 }
@@ -241,67 +273,73 @@ form .form-group textarea{
     font-size: 20px;
 }
 
-.forgot{
-    cursor:pointer ;
+.forgot {
+    cursor: pointer;
     color: #3784ff;
     font-size: 18px;
     text-decoration: none;
     margin-top: px;
 }
 
- .forgot:hover {
+.forgot:hover {
     color: #001e81
 }
 
 
-.btn{ 
+.btn {
     display: block;
     height: 44px;
     width: fit-content;
     font-size: 13px;
     font-weight: 600;
-    transition : all 200ms linear;
+    transition: all 200ms linear;
     padding: 0 30px;
     border: none;
     background-color: #124ce7;
     color: #ffffff;
-    box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+    box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
     border-radius: 25px;
     margin: 20px auto 15px;
-  }
-  .btn:active,
-  .btn:focus{  
+}
+
+.btn:active,
+.btn:focus {
     background-color: #e4edff;
     color: #124ce7;
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-  }
-  .btn:hover{  
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+}
+
+.btn:hover {
     background-color: #ffffff;
     color: #124ce7;
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-  }
-  a {
-	cursor: pointer;
-  transition: all 200ms linear;
+    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
 }
+
+a {
+    cursor: pointer;
+    transition: all 200ms linear;
+}
+
 /* End Form */
 
 /* ########################################### result ############################################ */
 
-h1{
+h1 {
     text-align: center;
     margin: 60px 0 20px;
     background-color: #1b2eae;
     color: white;
     padding: 25px;
 }
+
 .dvPlc {
     position: relative;
     text-align: right;
     color: white;
     margin: 20px 0;
 }
-.cntnr{
+
+.cntnr {
     position: absolute;
     top: 0px;
     left: 0;
@@ -311,55 +349,70 @@ h1{
     width: 40px;
     height: 40px;
     z-index: 5;
+    -webkit-tap-highlight-color: transparent;
 }
+
 .clear {
     font-size: 5vh;
     color: white;
     display: block;
     cursor: pointer;
+    margin-bottom: 15px;
     width: 40px;
     height: 40px;
 }
-.mdfSVG{
+
+.mdfSVG {
     fill: white;
     cursor: pointer;
 }
-.dvPlc .normal{
+
+.dvPlc .normal {
     position: relative;
     padding: 15px 20px;
     font-size: 25px;
 }
-.valed{
+
+.valed {
     background-color: green;
-}.Fake{
+}
+
+.Fake {
     background-color: #f44336;
 }
-.dvPlc .normal h2{
+
+.dvPlc .normal h2 {
     margin-bottom: 12px;
     padding-left: 40px;
+    font-size: 25px;
 }
-.dvPlc .normal h2 a{
+
+.dvPlc .normal h2 a {
     color: #000080;
 }
+
 @media (max-width:991px) {
-    .dvPlc .normal{
-        font-size: 20px;
+    .dvPlc .normal {
+        font-size: 15px;
     }
 }
 
-.valdh2 , .fakeh2{
+.valdh2,
+.fakeh2 {
     text-align: center;
-    font-size: 33px;
+    font-size: 25px;
     background-color: green;
     padding: 30px 5px;
     color: white;
     cursor: pointer;
     margin: 10px 0;
 }
-.fakeh2{
+
+.fakeh2 {
     background-color: red
 }
-.vlfkdiv{
+
+.vlfkdiv {
     display: none;
     overflow: hidden;
     flex-direction: column-reverse;
