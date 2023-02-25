@@ -177,20 +177,20 @@ function rslt(chPg) {
       let lstPg = '', kys=Object.keys(snp.val());
       kys.sort(cmprNmbr);
       aSn[chPg] = snp.val();
-      
       kys.forEach(e=>{
         lstPg += dvUpdt(chPg, e, aSn[chPg][e]);
       });
       gebi(`list${chPg}`).innerHTML = lstPg;
-      if (chPg == 'Fake') {
-        gebi("plWt").className = "n";
-        gebi("lod").className = "n";
-      }
+      
       
     } else {
       gebi(`list${chPg}`).innerText = "No data available";
     }
   })
+  if (chPg == 'Fake') {
+    gebi("plWt").className = "n";
+    gebi("lod").className = "n";
+  }
 } 
 
 
