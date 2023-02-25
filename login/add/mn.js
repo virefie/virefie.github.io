@@ -146,18 +146,17 @@ if (namePg == '') {
 }
 
 function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: emailPg  }
-  let fblien = aSn[1].length > 0 ? 'https://www.facebook.com/' + aSn[1] : '',
+  let fblien = aSn[1].length > 0 ? 'href="https://www.facebook.com/' + aSn[1]+'" target="_blank"' : '',
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : '';
   return `<div id="${chPg}/${stId}" class="dvPlc">
   <span class="cntnr">
   <span  onclick="dltdiv('${chPg}/${stId}')" class="clear" >×</span>
-  <a href="#input-box" class="mdfSVG" onclick="upVlu('${chPg}','${stId}') ">${edtSVG}</a>
+  <a href="#input-box" class="mdfSVG" onclick="upVlu('${chPg}','${stId}')">${edtSVG}</a>
   </span>
   <div class="normal">
-    <h2><a href="${fblien}" target="_blank"> ${aSn[0]}</a></h2>
-  <strong>:الايميل</strong> <br> ${aSn[3]}<br><br>
+    <h2><a ${fblien}> ${aSn[0]}</a></h2><strong>:الايميل</strong> <br> ${aSn[3]}<br><br>
   <strong> :رقم الحساب البريدي </strong><br> ${prNmCcp}<br><br>
-  <strong> :معلومات عن الصفحة</strong><br> ${aSn[4]}
+  <strong> :معلومات عن الحساب</strong><br> ${aSn[4]}
   </div>
   </div>`
 }
@@ -183,6 +182,11 @@ function rslt(chPg) {
         lstPg += dvUpdt(chPg, e, aSn[chPg][e]);
       });
       gebi(`list${chPg}`).innerHTML = lstPg;
+      if (chPg == 'Fake') {
+        gebi("plWt").className = "n";
+        gebi("lod").className = "n";
+      }
+      
     } else {
       gebi(`list${chPg}`).innerText = "No data available";
     }

@@ -164,55 +164,56 @@ a {
     .dvPlc {
     left:  10px;
 }
-}.header {
+/* Start Header */
+}header {
     padding:  20px;
 }
-.header .container {
+header .container {
     display:  flex;
     justify-content:  space-between;
     align-items:  center;
 }
-.header .logo {
+header .logo {
     width:  40px;
 }
-.header .links {
+header .links {
     position:  relative;
 }
-.header .links:hover .icon span:nth-child(2) {
+header .links:hover .icon span:nth-child(2) {
     width:  100%}
-.header .links .icon {
+header .links .icon {
     width:  25px;
     display:  flex;
     flex-wrap:  wrap;
     justify-content:  flex-end;
 }
-.header .links .icon span {
+header .links .icon span {
     background-color:  #333;
     margin-bottom:  5px;
     width:  100%;
     height:  2px;
 }
-.header .links .icon span:nth-child(2) {
+header .links .icon span:nth-child(2) {
     width:  60%;
     transition:  var(--main-durachen);
 }
-.header .links ul {
+header .links ul {
     margin:  0;
     padding:  0;
     background-color:  var(--section-background);
     position: absolute;
     right:  0;
     min-width:  200px;
-    top:  calc(100% 15px);
+    top:  calc(100% + 15px);
     border-radius:  3px;
     z-index:  1;
     text-align:  right;
     display:  none;
 }
-.header .links:hover ul {
+header .links:hover ul {
     display:  block;
 }
-.header .links ul::before {
+header .links ul::before {
     content:  "";
     content:  "";
     position:  absolute;
@@ -221,19 +222,19 @@ a {
     border:  10px solid;
     border-color:  transparent transparent var(--section-background);
 }
-.header .links ul li a {
+header .links ul li a {
     display:  block;
     padding:  15px;
     color:  #333;
     transition:  var(--main-durachen);
 }
-.header .links ul li a:hover {
+header .links ul li a:hover {
     padding-left:  25px;
 }
-.header .links ul li:not(:last-child) a {
+header .links ul li:not(:last-child) a {
     border-bottom:  1px solid #ddd;
 }
-.header .aboutUsp {
+header .aboutUsp {
     display:  none;
     top:  120px;
     max-width:  calc(100% - 20px);
@@ -246,10 +247,12 @@ a {
     border-radius:  5px;
     padding:  10px 20px;
 }
-.header .aboutUs:hover .aboutUsp {
+header .aboutUs:hover .aboutUsp {
     background-color:  #ddd;
     display:  block;
 }
+/* End Header */
+/* Start Navbar */
 .navbar-brand {
     margin:  25px auto 0;
     display:  block;
@@ -307,6 +310,7 @@ a {
     width:  70%;
     font-size:  25px;
 }
+/* End Navbar */
 }.dsTbl {
     text-align:  center;
     font-size:  33px;

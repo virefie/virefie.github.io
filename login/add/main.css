@@ -53,46 +53,80 @@ ul{
     }
 }
 /* End Global Rules */
-/* Start header */
-.header{
+/* Start Header */
+.loding {
+    display: flex;
     position: fixed;
-    z-index: 2;
+    align-items: center;
+    margin-top: -80px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: white;
+}
+.loding img {
+    width:  50px;
+}
+.loding .wt {
+    width:  40px;
+    height:  40px;
+    border-radius:  50%;
+    border:  5px solid #131e3a;
+    border-left-color:  transparent;
+    animation:  spin .7s linear infinite;
+}
+@keyframes spin {
+    0% {
+    transform:  rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}.n {
+    display:  none;
+}
+header{
+    position: fixed;
+    z-index: 7;
     background-color: var(--section-background);
     margin-top: -80px;
     padding: 10px;
     width: 100%;
 }
-.header .container{
+header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header .logo{
+header .logo{
     width: 40px;
 }
-.header .links{
+header .links{
     position: relative;
 }
-.header .links:hover .icon span:nth-child(2){
+header .links:hover .icon span:nth-child(2){
     width: 100%;
 }
-.header .links .icon{
+header .links .icon{
     width: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
-.header .links .icon span{
+header .links .icon span{
     background-color: #333;
     margin-bottom: 5px;
     width: 100%;
     height: 2px;
 }
-.header .links .icon span:nth-child(2){
+header .links .icon span:nth-child(2){
     width: 60%;
     transition: var(--main-durachen);
 }
-.header .links ul{
+header .links ul{
     margin: 0;
     padding: 0;
     background-color: var(--section-background);
@@ -105,10 +139,10 @@ ul{
     text-align: right;
     display: none;
 }
-.header .links:hover ul{
+header .links:hover ul{
     display: block;
 }
-.header .links ul::before{
+header .links ul::before{
     content: "";
     content: "";
     position: absolute;
@@ -117,21 +151,21 @@ ul{
     border: 10px solid;
     border-color: transparent transparent var(--section-background);
 }
-.header .links ul li a{
+header .links ul li a{
     display: block;
     padding: 15px;
     color: #333;
     transition: var(--main-durachen);
 }
-.header .links ul li a:hover{
+header .links ul li a:hover{
     padding-left: 25px;
 }
-.header .links ul li:not(:last-child) a{
+header .links ul li:not(:last-child) a{
     border-bottom: 1px solid #ddd;
 
 }
 
-/* End header */
+/* End Header */
 
 /* Start Form */
 .login-box{
