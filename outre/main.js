@@ -30,7 +30,7 @@ function afchRslt(e) {
         s = t[2].length > 0 ? `<strong> :رقم الحساب البريدي </strong><br>0079999900${t[2]}<br><br>` : "",
         n = t[3].length > 0 ? `<strong>:الايميل</strong> <br> ${t[3]}<br><br>` : "",
         r = t[4].length > 0 ? `<strong> :معلومات عن الصفحة</strong><br> ${t[4]}` : "";
-    dv.innerHTML = `<span class="clear" onclick="hiding()">×</span>\n  <div class="dv${e.vl} hidjs">    <h2>${a}</h2><h2> : إسم الحساب<br><a href="${l}" target="_blank"> ${t[0]}</a></h2>   ${n + s + r}   </div>`
+    dv.innerHTML = `<span class="clear" onclick="hiding()">×</span>\n  <div class="dv${e.vl} hidjs">    <h2>${a}</h2>${l} ${n + s + r}   </div>`
 }
 
 function hiding() {
