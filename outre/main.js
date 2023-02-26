@@ -26,11 +26,11 @@ function afchRslt(e) {
     }, 0), "Uncertain" == e.vl) return dv.innerHTML = '<span class="clear" onclick="hiding()">×</span>\n       <div class="Uncertain hidplac">\n      <h2>لم يتم التأكد من مصداقية هد الحساب</h2>\n      <span> ليس لدينا معلوما حول هذا الحساب يرجى مساعدتنا عبر صفحتنا على الفيسبوك </span><a href="https://www.facebook.com/profile.php?id=100089115259293" >  مكافحة النصب الإلكتروني</a>\n      </div> ', 0;
     let t = aSn[e.vl][e.in][1],
         a = "valed" == e.vl ? "هذا الحساب موثوق" : "Fake" == e.vl ? "حذاري ⚠️  هذا الحساب  مزيف" : "لم يتم التأكد من مصداقية هذه الصفحة",
-        l = t[1].length > 0 ? "https://www.facebook.com/" + t[1] : "",
+        l = t[1].length > 0 ? `<h2> : إسم الحساب<br><a href="${t[1]}" target="_blank"> ${t[0]}</a></h2>  `: "",
         s = t[2].length > 0 ? `<strong> :رقم الحساب البريدي </strong><br>0079999900${t[2]}<br><br>` : "",
         n = t[3].length > 0 ? `<strong>:الايميل</strong> <br> ${t[3]}<br><br>` : "",
         r = t[4].length > 0 ? `<strong> :معلومات عن الصفحة</strong><br> ${t[4]}` : "";
-    dv.innerHTML = `<span class="clear" onclick="hiding()">×</span>\n  <div class="dv${e.vl} hidjs">\n    <h2>${a}</h2><h2> : إسم الحساب<br><a href="${l}" target="_blank"> ${t[0]}</a></h2>\n    ${n + s + r}\n    </div>`
+    dv.innerHTML = `<span class="clear" onclick="hiding()">×</span>\n  <div class="dv${e.vl} hidjs">    <h2>${a}</h2><h2> : إسم الحساب<br><a href="${l}" target="_blank"> ${t[0]}</a></h2>   ${n + s + r}   </div>`
 }
 
 function hiding() {
@@ -61,7 +61,7 @@ class base {
             in: t
         }))
     };
-}
+};
 let aSn = {
     valed: [],
     Fake: []
