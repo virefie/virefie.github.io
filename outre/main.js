@@ -90,6 +90,6 @@ dv.addEventListener("click", e => {
     let a = frm.srch.value,
         l = a.indexOf("facebook.com"),
         s = a.length;
-    if (l > -1 && afchRslt(fcbs.getInd(a.slice(l + "facebook.com".length, s))), !isNaN(a)) return 20 == s && 0 == a.indexOf("0079999900")&& "RIB" == gebi("tpInp").value && (a = a.slice(10, 20)), 12 == s && 0 == a.indexOf("00") && (a = a.slice(2, 12)), 10 != a.length ? (t(), 0) : (afchRslt(Ccps.getInd(a)), 0);
+    if (l > -1 && afchRslt(fcbs.getInd(a.slice(l + "facebook.com".length, s))), !isNaN(a)) return 20 == s && 0 == a.indexOf("0079999900")&& "RIB baridiMob" == gebi("tpInp").value && (a = a.slice(10, 20)), 12 == s && 0 == a.indexOf("00") && (a = a.slice(2, 12)), 10 != a.length ? (t(), 0) : (afchRslt(Ccps.getInd(a)), 0);
     a.indexOf("@") > 0 ? afchRslt(emails.getInd(a)) : t()
 }), window.hiding = hiding;
