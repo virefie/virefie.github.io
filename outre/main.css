@@ -270,8 +270,7 @@ header .aboutUs:hover .aboutUsp {
     margin-bottom:  20px;
 }
 .descreption p {
-    font-size:  22px;
-    font-weight:  600;
+    font-size: 17px;
 }
 .search-sectin {
     display:  flex;
@@ -312,7 +311,10 @@ header .aboutUs:hover .aboutUsp {
     font-size:  25px;
 }
 }
-
+.prgf{
+    padding: 20px;
+    text-align: right;
+}
 /* End Navbar */
 .dsTbl {
     text-align:  center;
