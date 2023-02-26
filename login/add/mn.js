@@ -36,9 +36,9 @@ frm.onsubmit = (e) => {
     idUpdt =frm.idUpdt.value;
   namePg = namePg.trim(); lienPg = lienPg.trim(); nmbrCcpPg = nmbrCcpPg.trim();
   emailPg = emailPg.trim();
-if (namePg == '') {
+/* if (namePg == '') {
   namePg='بدون إسم'
-}
+} */
   /* Start  facebook*/
   let inFcbk = lienPg.indexOf('facebook.com');
   if (inFcbk < 0 && lienPg.length > 0) {
