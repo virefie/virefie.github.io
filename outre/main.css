@@ -314,6 +314,8 @@ header .aboutUs:hover .aboutUsp {
 .prgf{
     padding: 20px;
     text-align: right;
+    background-color: #eee;
+    border: 1px solid #ddd;
 }
 /* End Navbar */
 .dsTbl {
