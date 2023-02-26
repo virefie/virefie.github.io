@@ -175,7 +175,7 @@ header .container {
     align-items:  center;
 }
 header .logo {
-    width:  40px;
+   /*  width:  40px; */
 }
 header .links {
     position:  relative;
@@ -186,7 +186,6 @@ header .links .icon {
     width:  25px;
     display:  flex;
     flex-wrap:  wrap;
-    justify-content:  flex-end;
 }
 header .links .icon span {
     background-color:  #333;
@@ -203,12 +202,11 @@ header .links ul {
     padding:  0;
     background-color:  var(--section-background);
     position: absolute;
-    right:  0;
     min-width:  200px;
     top:  calc(100% + 15px);
     border-radius:  3px;
     z-index:  1;
-    text-align:  right;
+    text-align:  center;
     display:  none;
 }
 header .links:hover ul {
@@ -219,7 +217,7 @@ header .links ul::before {
     content:  "";
     position:  absolute;
     bottom:  100%;
-    right:  5px;
+    left:   5px;
     border:  10px solid;
     border-color:  transparent transparent var(--section-background);
 }
@@ -313,9 +311,16 @@ header .aboutUs:hover .aboutUsp {
 }
 .prgf{
     padding: 20px;
-    text-align: right;
+    text-align: center;
     background-color: #eee;
     border: 1px solid #ddd;
+}
+.prgf strong{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    color:  var(--main-color);
+    margin-bottom:  -10px;
 }
 /* End Navbar */
 .dsTbl {
