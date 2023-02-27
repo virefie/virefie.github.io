@@ -252,6 +252,25 @@ header .aboutUs:hover .aboutUsp {
 }
 /* End Header */
 /* Start Navbar */
+.typeInp{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 37px auto -28px;
+}
+.typeInp label{
+    /* 
+    display: inline-block; */
+    width: 170px;
+    height: 25px;
+}
+.typeInp select{
+    border-radius: 3px;
+    border: 1px solid #777;
+}
+.typeInp select:focus{
+    outline: none;
+}
 .navbar-brand {
     margin:  25px auto 0;
     display:  block;
