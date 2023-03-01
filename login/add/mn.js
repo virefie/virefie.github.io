@@ -3,7 +3,7 @@ import { push, update, remove, set } from "https://www.gstatic.com/firebasejs/9.
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 const auth = getAuth(app); const dbRef = ref(database);
 const edtSVG = '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.3 8.925-4.25-4.2 1.4-1.4q.575-.575 1.413-.575.837 0 1.412.575l1.4 1.4q.575.575.6 1.388.025.812-.55 1.387ZM17.85 10.4 7.25 21H3v-4.25l10.6-10.6Z"/></svg>';
-let frm = document.forms[0], idUpdt = '', aSn = {valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId,vlFk;
+let frm = document.forms[0], idUpdt = '', aSn = {valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId,vlFk,emls=[],fcbs=[],ccps=[];
 
 gebi('logaut').onclick = () => {
   signOut(auth).then(() => { 
@@ -36,16 +36,13 @@ frm.onsubmit = (e) => {
     idUpdt =frm.idUpdt.value;
   namePg = namePg.trim(); lienPg = lienPg.trim(); nmbrCcpPg = nmbrCcpPg.trim();
   emailPg = emailPg.trim();
-/* if (namePg == '') {
+if (!namePg && lienPg) {
   namePg='بدون إسم'
-} */
+}
   /* Start  facebook*/
   let inFcbk = lienPg.indexOf('facebook.com');
-  if (inFcbk < 0 && lienPg.length > 0) {
-    gebi('msageUrl').style.display = 'block';
-    setTimeout(() => {
-      gebi('msageUrl').style.display = 'none';
-    }, 2000);
+  if (inFcbk < 0 && lienPg.length > 0) {  // >   
+    afchHdn('msageUrl','لديك خطأ في الرابط')
     return 0
   } else if (inFcbk > -1) {
     lienPg = lienPg.slice(inFcbk + 13, lienPg.length)
@@ -63,21 +60,22 @@ frm.onsubmit = (e) => {
 
   }
   if (rsltCcp == false && nmbrCcpPg.length > 0) {
-    gebi('msageCcp').style.display = 'block';
-    setTimeout(() => {
-      gebi('msageCcp').style.display = 'none';
-    }, 2000);
+    afchHdn('msageCcp','Ccp لديك خطأ في كتابة رقم')
+   
     return 0
   }
   /* End verefail CCP Compte */
 
   if (inFcbk < 0 && lienPg.length > 0) { return 0 }
 
-  if (idUpdt == '' || vlFk == chPg) {
+  if (!idUpdt || vlFk == chPg) {
+    /* Start chek is set or no */
+    if (!idUpdt && isSet() ) {return 0}
+    /* End chek is set or no */
     vUp['lvr'+chPg]++;
     set(ref(database, 'updatV/vr'+ chPg), vUp['lvr'+chPg])
     .then(()=>{
-      if (idUpdt == '') {
+      if (!idUpdt) {
         stId = 'P' + vUp['lvr'+chPg];
         apdorSt(set);
       } else {
@@ -85,8 +83,6 @@ frm.onsubmit = (e) => {
         apdorSt(update);
       }
     });
-   
-
   } else {
     vUp.lvrvaled++; vUp.lvrFake++;
     set(ref(database, 'updatV/vrvaled'), vUp.lvrvaled);
@@ -103,18 +99,15 @@ frm.onsubmit = (e) => {
     aSn[chPg][stId] = { 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: emailPg, 4: inf }
     uppSt(ref(database, chPg + '/' + stId),aSn[chPg][stId])
       .then(() => {
-        gebi('vlpush').style.display = 'block';
-        setTimeout(() => {
-          gebi('vlpush').style.display = 'none';
-        }, 2000);
+        afchHdn('vlpush','تم <span id="supmt">الإضافة</span> بنجاح') 
 
         frm.reset();
         let childdv;
         childdv = document.createElement('div');
         childdv.className = 'dvPlc';
         
-        if ( vlFk == chPg || idUpdt == '') {
-          if (idUpdt == '') {
+        if ( vlFk == chPg || !idUpdt) {
+          if (!idUpdt) {
             gebi(`list${chPg}`).innerHTML += dvUpdt(chPg, stId, aSn[chPg][stId]);
           } else {
             gebi(chPg + '/' + idUpdt).outerHTML = dvUpdt(chPg, stId, aSn[chPg][stId]);
@@ -124,30 +117,39 @@ frm.onsubmit = (e) => {
         } else {
           remove(child(dbRef, vlFk+'/'+idUpdt));
           gebi(vlFk+'/'+idUpdt).remove();
+          delete emls[1];delete fcbs[1];delete ccps[1];
           upAdd();
           gebi(`list${chPg}`).innerHTML += dvUpdt(chPg, stId, aSn[chPg][stId]);
         }
         function upAdd() {
-          gebi('supmt').innerText = 'التعديل';
           frm.sub.value= 'إضافة';
-            setTimeout(() => {
-              gebi('supmt').innerText = 'الإضافة';
-            }, 3000);
+          afchHdn('msageCcp','التعديل','الإضافة')
         }
       })
-      .catch((e) => {
-        gebi('errpush').style.display = 'block';
-        console.log(e);
-        setTimeout(() => {
-          gebi('errpush').style.display = 'none';
-        }, 2000);
-      });
+      .catch(() => { afchHdn('errpush','حدث خطأ أعد المحاولة')});
+  }
+/*  */
+  function isSet() {
+    if (emailPg && emls.includes(emailPg) ) {
+      afchHdn('msageEmail','هدا الإميل موجود من قبل')
+      return true
+    }
+    if (lienPg && fcbs.includes(lienPg)) {
+      afchHdn('msageCcp','هدا الرابط موجود من قبل')
+      return true
+    }
+    if (nmbrCcpPg && ccps.includes(nmbrCcpPg) ) {
+      afchHdn('msageCcp','هدا الحساب موجود من قبل')
+      return true
+    }
+    return false
   }
 }
 
 function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: emailPg  }
   let fblien = aSn[1].length > 0 ? 'href="https://www.facebook.com/' + aSn[1]+'" target="_blank"' : '',
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : '';
+    emls.push(aSn[3]);fcbs.push(aSn[1]);ccps.push(aSn[2]);
   return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
   <span class="cntnr">
   <span  onclick="dltdiv('${chPg}/${stId}')" class="clear" >×</span>
@@ -176,12 +178,12 @@ function rslt(chPg) {
     if (snp.exists()) {
       let lstPg = '', kys=Object.keys(snp.val());
       kys.sort(cmprNmbr);
-      aSn[chPg] = snp.val();
+      aSn[chPg] = snp.val();console.log(kys.length);
+      gebi(chPg+'h2').innerHTML += ' '+kys.length
       kys.forEach(e=>{
         lstPg += dvUpdt(chPg, e, aSn[chPg][e]);
       });
       gebi(`list${chPg}`).innerHTML = lstPg;
-     
     } else {
       gebi(`list${chPg}`).innerText = "No data available";
     }
@@ -229,7 +231,12 @@ document.querySelectorAll('.h2lst').forEach(el => {
 
   }
 })
-
+function afchHdn(el,title,ttl2='') {
+  gebi(el).innerHTML = title;
+    setTimeout(() => {
+      gebi(el).innerHTML = ttl2;
+    }, 2000);
+}
 
 
  /*   let allCcp =''

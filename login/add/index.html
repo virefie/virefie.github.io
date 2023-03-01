@@ -55,24 +55,25 @@
             <div class="form-group">
                 <label for="lienPage">رابط الحساب</label>
                 <input type="url" id="lienPage" name="lienPg" />
-                <p id="msageUrl" style="display: none;color: red;">لديك خطأ في الرابط</p>
+                <p id="msageUrl" style="color: red;"></p>
             </div>
             <div class="form-group">
                 <label for="nmPost">رقم الحساب البريدي </label>
                 <input type="number" id="nmPost" name="nmbrCcpPg" minlength="10" maxlength="20" />
-                <p id="msageCcp" style="display: none;color: red;">Ccp لديك خطأ في كتابة رقم</p>
+                <p id="msageCcp" style="color: red;"></p>
             </div>
             <div class="form-group">
                 <label for="emailPg">الإيميل </label>
                 <input type="email" id="emailPg"  name="emailPg" />
+                <p id="msageEmail" style="color: red;"></p>
             </div>
             <div class="form-group">
                 <label for="idInfo">معلومات عن الحساب </label>
                 <textarea name="inf" id="idInfo"></textarea>
             </div>
             <div style="height: 10px;text-align: left;">
-                <p id="vlpush" style="display: none;color: green;">تم <span id="supmt">الإضافة</span> بنجاح</p>
-            <p id="errpush" style="display: none;color: red;">حدث خطأ أعد المحاولة</p>
+                <p id="vlpush" style="color: green;"></p>
+            <p id="errpush" style="color: red;"></p>
             </div>
             <div class="form-group">
                 <label for="fcPage" style="color: red;">حساب مزيفة</label>
@@ -97,10 +98,10 @@
 
     <h1 id="allPages">جميع الحسابات المسجلة</h1>
 
-    <h2 id="valPage" class="valdh2 h2lst"><span>▼</span> الحسابات الموثوقة </h2>
+    <h2 id="valedh2" class="vldh2 h2lst"><span>▼</span> الحسابات الموثوقة </h2>
     <div id="listvaled" class="vlfkdiv" ></div>
 
-    <h2 id="valPage" class="fakeh2 h2lst"><span>▼</span> الحسابات المزورة </h2>
+    <h2 id="Fakeh2" class="Fkh2 h2lst"><span>▼</span> الحسابات المزورة </h2>
     <div id="listFake" class="vlfkdiv"></div>
 
 
