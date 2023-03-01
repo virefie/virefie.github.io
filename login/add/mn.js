@@ -53,9 +53,13 @@ if (!namePg && lienPg) {
   if (!isNaN(nmbrCcpPg) && nmbrCcpPg.indexOf(' ') < 0) {
 
     if (nmbrCcpPg.length == 12) {
-      if (nmbrCcpPg.indexOf('00') == 0) { rsltCcp = true; nmbrCcpPg = nmbrCcpPg.slice(2, nmbrCcpPg.length) }
+      if (nmbrCcpPg.indexOf('00') == 0) { 
+        rsltCcp = true; nmbrCcpPg = nmbrCcpPg.slice(2, nmbrCcpPg.length) 
+      }
     } else if (nmbrCcpPg.length == 20) {
-      if (nmbrCcpPg.indexOf('0079999900') == 0) { rsltCcp = true; nmbrCcpPg = nmbrCcpPg.slice(10, nmbrCcpPg.length) }
+      if (nmbrCcpPg.indexOf('0079999900') == 0) { 
+        rsltCcp = true; nmbrCcpPg = nmbrCcpPg.slice(10, nmbrCcpPg.length) 
+      }
     } else if (nmbrCcpPg.length == 10) { rsltCcp = true }
 
   }
@@ -67,20 +71,20 @@ if (!namePg && lienPg) {
   /* End verefail CCP Compte */
 
   if (inFcbk < 0 && lienPg.length > 0) { return 0 }
-
+  /* Start chek is set or no */
+  if (isSet() ) {return 0}
+  /* End chek is set or no */
   if (!idUpdt || vlFk == chPg) {
-    /* Start chek is set or no */
-    if (!idUpdt && isSet() ) {return 0}
-    /* End chek is set or no */
+    
     vUp['lvr'+chPg]++;
     set(ref(database, 'updatV/vr'+ chPg), vUp['lvr'+chPg])
     .then(()=>{
       if (!idUpdt) {
         stId = 'P' + vUp['lvr'+chPg];
-        apdorSt(set);
+        apdorSt(set)
       } else {
         stId = idUpdt;
-        apdorSt(update);
+        apdorSt(update)
       }
     });
   } else {
@@ -117,7 +121,7 @@ if (!namePg && lienPg) {
         } else {
           remove(child(dbRef, vlFk+'/'+idUpdt));
           gebi(vlFk+'/'+idUpdt).remove();
-          delete emls[1];delete fcbs[1];delete ccps[1];
+          
           upAdd();
           gebi(`list${chPg}`).innerHTML += dvUpdt(chPg, stId, aSn[chPg][stId]);
         }
@@ -201,6 +205,8 @@ function upVlu(chPg, stId) {
   let fblien = aSn[chPg][stId][1].length > 0 ? 'https://www.facebook.com/' + aSn[chPg][stId][1] : '',
     prNmCcp = aSn[chPg][stId][2].length > 0 ? '0079999900' + aSn[chPg][stId][2] : '';
   vlFk = chPg;
+  delete emls[emls.indexOf(aSn[chPg][stId][3])]; delete fcbs[fcbs.indexOf(aSn[chPg][stId][1])];
+  delete ccps[ccps.indexOf(aSn[chPg][stId][2])];
   frm.namePg.value = aSn[chPg][stId][0]; frm.lienPg.value = fblien;
   frm.nmbrCcpPg.value = prNmCcp; frm.emailPg.value = aSn[chPg][stId][3];
   frm.inf.value =aSn[chPg][stId][4];
