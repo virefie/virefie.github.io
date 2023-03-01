@@ -178,7 +178,7 @@ function rslt(chPg) {
     if (snp.exists()) {
       let lstPg = '', kys=Object.keys(snp.val());
       kys.sort(cmprNmbr);
-      aSn[chPg] = snp.val();console.log(kys.length);
+      aSn[chPg] = snp.val();
       gebi(chPg+'h2').innerHTML += ' '+kys.length
       kys.forEach(e=>{
         lstPg += dvUpdt(chPg, e, aSn[chPg][e]);
