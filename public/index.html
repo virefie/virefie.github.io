@@ -48,9 +48,11 @@
     <form action="get">
 
         <div class="typeInp" >
-            <select id="tpInp" onchange="document.getElementById('search').placeholder=this.value"> 
-                <option value="RIB baridiMob">RIB baridiMob</option>
-                <option value="Numéro CCP"> Numéro CCP </option>
+            <select id="tpInp" onchange="document.getElementById('search').placeholder=this.options[this.selectedIndex].innerText ;"> 
+                <option value="rib" >RIB baridiMob</option>
+                <option value="Nccp" >Numéro CCP </option>
+                <option value="fcbURL" >رابط الحساب على الفيسبوك</option>
+                <option value="eml" >الإيميل </option>
             </select>
             <label for="tpInp"><span>:</span>مالذي تريد أن تتحقق منه</label>
         </div>
@@ -75,19 +77,17 @@
         </div>
     </form>
     <p class="prgf">
-        بادرنا ببناء قاعدة بيانات حسابات سسبي، بريدي موب، و أرقام الهواتف للصوص المعروفين في مجال بيع و شراء العملات في
-        الجزائر، لأن الامر أصبح مقلق و خطير جدا، و الكثير من اخواننا و اخواتنا يتم النصب عليهم يوميا، خاصة مع انتحال
-        هوية الموثوقين. و قد حان الأوان لهذا ان يتوقف
-
+        بادرنا ببناء قاعدة بيانات حسابات سسبي، بريدي موب، و روابط الحسابات للصوص المعروفين في مجال بيع و شراء العملات في
+        الجزائر، لأن الامر أصبح مقلق و خطير جدا، و الكثير من اخواننا و أخواتنا يتم النصب عليهم يوميا، خاصة مع انتحال
+        هوية الموثوقين. و قد حان الأوان لهذا أن يتوقف
         <br> <br>
         <strong> كيف سيعمل النظام</strong>
         <br>
-        <span>ccp أو barid mob</span> لقد أنشأنا صفحة تسمح لأي شخص بالإبلاغ عن حساب أو الهاتف. سيتم مراجعة كل تقرير من
-        قبل مسؤولي الموقع ، ولا سيما عن طريق التحقق من الأدلة المقدمة ، إذا تبين أن التقرير له ما يبرره ، فسيتم إضافة
-        الحساب المبلغ عنه إلى قاعدة البيانات.
+        <span>ccp أو barid mob</span> لقد أنشأنا صفحة تسمح لأي شخص بالإبلاغ عن الحسابات . سيتم مراجعة كل تقرير من قبل مسؤولي الموقع ، ولا سيما عن طريق للتحقق من الأدلة المقدمة ، إذا تبين أن التقرير له ما يبرره ، فسيتم إضافة الحساب المبلغ عنه إلى قاعدة البيانات
+        
         <br>
         <span>Ccp</span> سيسمح لك النموذج بإدخال رقم حساب
-        أو الهاتف والحصول على إجابة بخصوص وجوده أو عدم وجوده في قاعدة بيانات
+        أو رابط الحساب والحصول على إجابة بخصوص وجوده أو عدم وجوده في قاعدة بيانات
         <br /><br />
         <!--   <strong >عدد الحسابات المبلغ</strong>
           <br>
@@ -101,7 +101,8 @@
 <img src="https://virefie.github.io/imgs/phcvr.jpg" alt="img" style="display: block;margin: 20px auto;max-width: 96%;">
     <!-- <h2 class="dsTbl container">الحسابات الموثوقة</h2><table id="tbvaled" ><thead><tr><th>الحساب البريدي</th><th>الايميل</th><th>إسم الحساب</th></tr></thead><tbody id="bdyvaled"></tbody></table><h2 id="FakePg" class="dsTbl container" style="background-color:red">الحسابات المزيفة</h2><table id="tbFake" ><thead><tr><th>الحساب البريدي</th><th>الايميل</th><th>إسم الحساب</th></tr></thead><tbody id="bdyFake"></tbody></table> 
       -->
-    <script type="module" src="https://virefie.github.io/outre/main.js"></script>
+    <!-- <script type="module" src="https://virefie.github.io/outre/main.js"></script> -->
+    <script type="module" src="../outre/main.js"></script>
 </body>
 
 </html>
