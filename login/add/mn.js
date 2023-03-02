@@ -134,9 +134,12 @@ if (!namePg && lienPg) {
   }
 /*  */
   function isSet() {
-    let ind = emls.indexOf(emailPg)+1,
+    let inde = emls.indexOf(emailPg),indFb=fcbs.indexOf(lienPg),indCcp= ccps.indexOf(nmbrCcpPg),
     lnk= (hrf,nam) => ` هدا ${nam} موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> ` ;
-    if (emailPg && ind  > 0 ) {
+    if (nmbrCcpPg && inde  == indFb && indFb == indCcp && indCcp > -1) {
+      afchHdn('msageEmail',lnk(indCcp+1,' اﻹميل '));opndvs();
+    }
+   /*  if (emailPg && ind  > 0 ) {
       afchHdn('msageEmail',lnk(ind,' اﻹميل '));opndvs();
       return true
     }
@@ -149,7 +152,7 @@ if (!namePg && lienPg) {
     if (nmbrCcpPg && ind > 0 ) {
       afchHdn('msageCcp',lnk(ind,' الحساب '));opndvs();
       return true
-    }
+    } */
     return false
   }
 }
