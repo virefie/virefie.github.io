@@ -136,17 +136,17 @@ if (!namePg && lienPg) {
   function isSet() {
     let ind = emls.indexOf(emailPg)+1,
     lnk= (hrf,nam) => ` هدا ${nam} موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> ` ;
-    if (emailPg && ind  > -1 ) {
+    if (emailPg && ind  > 0 ) {
       afchHdn('msageEmail',lnk(ind,' اﻹميل '));opndvs();
       return true
     }
     ind=fcbs.indexOf(lienPg)+1;
-    if (lienPg && ind > -1) {
+    if (lienPg && ind > 0) {
       afchHdn('msageCcp',lnk(ind,' الرابط ' ));opndvs();
       return true
     }
     ind=ccps.indexOf(nmbrCcpPg)+1;
-    if (nmbrCcpPg && ind > -1 ) {
+    if (nmbrCcpPg && ind > 0 ) {
       afchHdn('msageCcp',lnk(ind,' الحساب '));opndvs();
       return true
     }
@@ -157,6 +157,9 @@ if (!namePg && lienPg) {
 function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: emailPg  }
   let fblien = aSn[1].length > 0 ? 'href="https://www.facebook.com/' + aSn[1]+'" target="_blank"' : '',
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : '';
+    if (emls.indexOf(aSn[3])) {
+      console.log(ccps.length);
+    }
     emls.push(aSn[3]);fcbs.push(aSn[1]);ccps.push(aSn[2]);
   return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
   <span id="lnk${ccps.length}" class="cntnr">

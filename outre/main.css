@@ -313,6 +313,7 @@ header .aboutUs:hover .aboutUsp {
     outline:  none;
 }
 .search-sectin button {
+    color: transparentl;
     border:  0;
     background-color:  transparent;
 }
