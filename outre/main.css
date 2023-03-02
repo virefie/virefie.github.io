@@ -1,5 +1,5 @@
 :root {
-    --main-color: #005aa6;
+    --main-color: /* #005aa6 */ #ccc;
     --section-background: #f6f6f6;
     --section-padding: 60px;
     --main-durachen: 0.3s;
@@ -14,6 +14,9 @@
 }
 html {
     scroll-behavior:  smooth;
+}
+body{
+    background-color: #032b5c;
 }
 ul {
     list-style:  none;
@@ -175,9 +178,9 @@ header .container {
     justify-content:  space-between;
     align-items:  center;
 }
-/* header .logo {
-     width:  40px; 
-} */
+header .logo {
+     color: var(--main-color);;
+}
 header .links {
     position:  relative;
 }
@@ -262,6 +265,7 @@ header .aboutUs:hover .aboutUsp {
 .typeInp label{
     /* 
     display: inline-block; */
+    color: white;
     width: 170px;
     height: 25px;
 }

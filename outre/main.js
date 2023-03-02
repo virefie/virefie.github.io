@@ -147,8 +147,4 @@ if ( localStorage.vrsnUp != null) {
     t();
     
 });
-tst();
-function tst() {
-    console.log('rah');
-}
 window.hiding = hiding;
