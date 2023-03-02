@@ -94,7 +94,7 @@
         "processScripts": [],
         "quoteCharacter": "\"",
         "removeAttributeQuotes": false,
-        "removeComments": false,
+        "removeComments": true,
         "removeEmptyAttributes": false,
         "removeEmptyElements": false,
         "removeOptionalTags": false,
