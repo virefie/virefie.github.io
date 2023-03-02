@@ -39,7 +39,7 @@ a {
     .container {
     width:  1170px;
 }
-}::-webkit-scrollbar {
+/* }::-webkit-scrollbar {
     width:  5px;
     height:  5px;
 }
@@ -50,7 +50,7 @@ a {
 ::-webkit-scrollbar-thumb {
     background-color:  #bbb;
     border-radius:  7px;
-}
+} */
 .loding {
     display:  flex;
     position:  fixed;
