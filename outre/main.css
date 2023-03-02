@@ -175,9 +175,9 @@ header .container {
     justify-content:  space-between;
     align-items:  center;
 }
-header .logo {
-   /*  width:  40px; */
-}
+/* header .logo {
+     width:  40px; 
+} */
 header .links {
     position:  relative;
 }
