@@ -134,16 +134,20 @@ if (!namePg && lienPg) {
   }
 /*  */
   function isSet() {
-    if (emailPg && emls.includes(emailPg) ) {
-      afchHdn('msageEmail','هدا الإميل موجود من قبل')
+    let ind = emls.indexOf(emailPg)+1,
+    lnk= (hrf,nam) => ` هدا ${nam} موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> ` ;
+    if (emailPg && ind  > -1 ) {
+      afchHdn('msageEmail',lnk(ind,' اﻹميل '));opndvs();
       return true
     }
-    if (lienPg && fcbs.includes(lienPg)) {
-      afchHdn('msageCcp','هدا الرابط موجود من قبل')
+    ind=fcbs.indexOf(lienPg)+1;
+    if (lienPg && ind > -1) {
+      afchHdn('msageCcp',lnk(ind,' الرابط ' ));opndvs();
       return true
     }
-    if (nmbrCcpPg && ccps.includes(nmbrCcpPg) ) {
-      afchHdn('msageCcp','هدا الحساب موجود من قبل')
+    ind=ccps.indexOf(nmbrCcpPg)+1;
+    if (nmbrCcpPg && ind > -1 ) {
+      afchHdn('msageCcp',lnk(ind,' الحساب '));opndvs();
       return true
     }
     return false
@@ -155,7 +159,7 @@ function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: ema
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : '';
     emls.push(aSn[3]);fcbs.push(aSn[1]);ccps.push(aSn[2]);
   return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
-  <span class="cntnr">
+  <span id="lnk${ccps.length}" class="cntnr">
   <span  onclick="dltdiv('${chPg}/${stId}')" class="clear" >×</span>
   <a href="#input-box" class="mdfSVG" onclick="upVlu('${chPg}','${stId}')">${edtSVG}</a>
   </span>
@@ -218,9 +222,16 @@ function dltdiv(stId) {
   remove(child(dbRef, stId));
   gebi(stId).remove();
 }
+function opndvs(){
+  document.querySelectorAll('.h2lst').forEach(el => {
+       el.nextElementSibling.style.display = "flex";
+  })
+  
+}
 
 window.upVlu = upVlu;
 window.dltdiv = dltdiv;
+//window.opndvs = opndvs;
 document.querySelectorAll('.h2lst').forEach(el => {
   el.onclick = (e) => {
     let nxtEl = el.nextElementSibling;
@@ -241,7 +252,7 @@ function afchHdn(el,title,ttl2='') {
   gebi(el).innerHTML = title;
     setTimeout(() => {
       gebi(el).innerHTML = ttl2;
-    }, 2000);
+    }, 3000);
 }
 
 
