@@ -39,7 +39,8 @@ a {
     .container {
     width:  1170px;
 }
-/* }::-webkit-scrollbar {
+ }
+ /*::-webkit-scrollbar {
     width:  5px;
     height:  5px;
 }
