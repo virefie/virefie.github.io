@@ -135,9 +135,9 @@ if (!namePg && lienPg) {
 /*  */
   function isSet() {
     let inde = emls.indexOf(emailPg),indFb=fcbs.indexOf(lienPg),indCcp= ccps.indexOf(nmbrCcpPg),
-    lnk= (hrf,nam) => ` هدا ${nam} موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> ` ;
+    lnk= hrf => ` هدا الحساب موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> ` ;
     if (nmbrCcpPg && inde  == indFb && indFb == indCcp && indCcp > -1) {
-      afchHdn('msageEmail',lnk(indCcp+1,' اﻹميل '));opndvs();
+      afchHdn('errpush',lnk(indCcp+1));opndvs();
     }
    /*  if (emailPg && ind  > 0 ) {
       afchHdn('msageEmail',lnk(ind,' اﻹميل '));opndvs();
