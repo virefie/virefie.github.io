@@ -1,11 +1,11 @@
 
 // Set up a cache name
-const cacheName = 'pwa-cache-v3';
+const cacheName = 'pwa-cache-v5';
 
 // Set up a list of files to be cached
 const filesToCache = [
-  '/',
-  'index.min.html',
+  '/',/* 
+  'index.min.html', */
   'https://virefie.github.io/outre/main.js',
   'https://virefie.github.io/outre/main.min.css'
 ];
