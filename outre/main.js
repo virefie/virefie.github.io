@@ -101,13 +101,13 @@ if ( localStorage.vrsnUp != null) {
             vUp.lvrFake = e.val().vrFake;
             localStorage.setItem("vrsnUp", JSON.stringify(vUp));
             rslt("Fake");
-            aSn.Fake = JSON.parse(localStorage.lstFake);
-            stlstPg("Fake")
         }
        
     }).catch(() => { 
         aSn.valed = JSON.parse(localStorage.lstvaled);
-        stlstPg("valed")
+        stlstPg("valed");
+        aSn.Fake = JSON.parse(localStorage.lstFake);
+        stlstPg("Fake")
      })
     
 }else{
