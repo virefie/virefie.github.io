@@ -100,10 +100,15 @@ if ( localStorage.vrsnUp != null) {
         } else {
             vUp.lvrFake = e.val().vrFake;
             localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-            rslt("Fake")
+            rslt("Fake");
+            aSn.Fake = JSON.parse(localStorage.lstFake);
+            stlstPg("Fake")
         }
        
-    })
+    }).catch(() => { 
+        aSn.valed = JSON.parse(localStorage.lstvaled);
+        stlstPg("valed")
+     })
     
 }else{
     get(child(dbRef, "updatV/")).then(e => {
