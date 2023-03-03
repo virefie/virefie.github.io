@@ -82,42 +82,54 @@ function hiding() {
     }, 320)
 }
 
-if ( localStorage.vrsnUp != null) {
-    vUp = JSON.parse(localStorage.vrsnUp);
-     get(child(dbRef, "updatV/"))
-     .then(e => {
-        if (vUp.lvrvaled == e.val().vrvaled ) {
+window.onload = ()=>{
+    if (window.navigator.onLine) {
+        lodngVrsn()
+    } else {
+        if (localStorage.vrsnUp != null) {
             aSn.valed = JSON.parse(localStorage.lstvaled);
-            stlstPg("valed")
-        }else{
-            vUp.lvrvaled = e.val().vrvaled; 
-            localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-            rslt("valed")
-        }
-        if (vUp.lvrFake == e.val().vrFake) {
+            stlstPg("valed");
             aSn.Fake = JSON.parse(localStorage.lstFake);
-            stlstPg("Fake")
-        } else {
-            vUp.lvrFake = e.val().vrFake;
-            localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-            rslt("Fake");
+            stlstPg("Fake") 
+        }else{
+            gebi('ntintrnt').innerText = 'ليس لديك اتصال بالانترنت'
         }
-       
-    }).catch(() => { 
-        aSn.valed = JSON.parse(localStorage.lstvaled);
-        stlstPg("valed");
-        aSn.Fake = JSON.parse(localStorage.lstFake);
-        stlstPg("Fake")
-     })
-    
-}else{
-    get(child(dbRef, "updatV/")).then(e => {
-        vUp.lvrFake = e.val().vrFake; 
-        vUp.lvrvaled = e.val().vrvaled;
-        localStorage.setItem("vrsnUp", JSON.stringify(vUp)); 
-        rslt("valed"); rslt("Fake")
-    })
+    }
 }
+
+function lodngVrsn() {
+    if ( localStorage.vrsnUp != null) {
+        vUp = JSON.parse(localStorage.vrsnUp);
+         get(child(dbRef, "updatV/"))
+         .then(e => {
+            if (vUp.lvrvaled == e.val().vrvaled ) {
+                aSn.valed = JSON.parse(localStorage.lstvaled);
+                stlstPg("valed")
+            }else{
+                vUp.lvrvaled = e.val().vrvaled; 
+                localStorage.setItem("vrsnUp", JSON.stringify(vUp));
+                rslt("valed")
+            }
+            if (vUp.lvrFake == e.val().vrFake) {
+                aSn.Fake = JSON.parse(localStorage.lstFake);
+                stlstPg("Fake")
+            } else {
+                vUp.lvrFake = e.val().vrFake;
+                localStorage.setItem("vrsnUp", JSON.stringify(vUp));
+                rslt("Fake");
+            }
+           
+        });
+    }else{
+        get(child(dbRef, "updatV/")).then(e => {
+            vUp.lvrFake = e.val().vrFake; 
+            vUp.lvrvaled = e.val().vrvaled;
+            localStorage.setItem("vrsnUp", JSON.stringify(vUp)); 
+            rslt("valed"); rslt("Fake")
+        })
+    }
+}
+
  frm.onsubmit = (e => {
     function t() {
         gebi("errCcp").style.display = "block", setTimeout(() => {
