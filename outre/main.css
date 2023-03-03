@@ -346,6 +346,15 @@ header .aboutUs:hover .aboutUsp {
     left:  10px;
 }
 } */
+.dwnld{
+    background-color: var(--main-color);
+    width: fit-content;
+    padding: 30px;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    color: #032b5c;
+}
 .prgf{
     position: absolute;
     width: 100%;
