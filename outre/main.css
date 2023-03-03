@@ -1,5 +1,5 @@
 :root {
-    --main-color: /* #005aa6 */ #ccc;
+    --main-color: /* #005aa6 */ #ddd;
     --section-background: #f6f6f6;
     --section-padding: 60px;
     --main-durachen: 0.3s;
@@ -16,7 +16,9 @@ html {
     scroll-behavior:  smooth;
 }
 body{
+    position: relative;
     background-color: #032b5c;
+    min-height: 100vh;
 }
 ul {
     list-style:  none;
@@ -260,7 +262,10 @@ header .aboutUs:hover .aboutUsp {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-flow: row-reverse;
+    flex-wrap: wrap;
     margin: 37px auto -28px;
+    padding: 10px;
 }
 .typeInp label{
     /* 
@@ -334,11 +339,19 @@ header .aboutUs:hover .aboutUsp {
     font-size:  25px;
 }
 }
+/* @media (max-height: 700px) {
+    .dvPlc {
+    left:  10px;
+}
+} */
 .prgf{
+    position: absolute;
+    width: 100%;
     padding: 20px;
     text-align: center;
     background-color: #eee;
     border: 1px solid #ddd;
+    bottom: 0;
 }
 .prgf strong{
     display: block;
