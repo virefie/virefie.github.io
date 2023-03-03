@@ -262,8 +262,10 @@ header .aboutUs:hover .aboutUsp {
     display: flex;
     justify-content: center;
     gap: 10px;
+    width: fit-content;
     flex-flow: row-reverse;
     flex-wrap: wrap;
+    flex-direction: column;
     margin: 37px auto -28px;
     padding: 10px;
 }

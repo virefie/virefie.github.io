@@ -5,14 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+    <!-- Poure applecation -->
+    <link rel="manifest" href="https://virefie.github.io/outre/manifest.json" />
+    <link rel="icon" href="https://virefie.github.io/imgs/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="https://virefie.github.io/imgs/apple-touch-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="https://virefie.github.io/imgs/logo2.jpg">
-    <meta name="description" content="مكافحة النصب الإلكتروني">
+    <!-- end pour app -->
+
+
+    <meta name="description" content="ccp أو barid mob لقد أنشأنا صفحة تسمح لأي شخص بالإبلاغ عن الحسابات . سيتم مراجعة كل تقرير من قبل مسؤولي الموقع ، ولا سيما عن طريق للتحقق من الأدلة المقدمة ، إذا تبين أن التقرير له ما يبرره ، فسيتم إضافة الحساب المبلغ عنه إلى قاعدة البيانات">
+    <!-- Cccs files -->
     <link rel="stylesheet" href="https://virefie.github.io/outre/main.min.css">
     <!-- <link rel="stylesheet" href="../outre/main.css"> -->
+    <!-- Cccs files -->
     <title>مكافحة النصب الإلكتروني</title>
-    <!-- <link href="https://cnfrmpage.web.app" rel="canonical" /> -->
-    <!--  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2386963024450863"
-    crossorigin="anonymous"></script> -->
+    
 </head>
 
 <body>
@@ -80,8 +89,8 @@
         </div>
     </form>
 
-    <img src="https://virefie.github.io/imgs/phcvr.jpg" alt="img" style="display: block;margin: 0 2% ;max-width: 96%;">
-    
+    <img src="https://virefie.github.io/imgs/phcvr.jpg" alt="img" style="display: block;margin: 0 2%;;width: 96%;">
+    <div style="height: 100px;"></div>
     <footer class="prgf">
 
         <!-- بادرنا ببناء قاعدة بيانات حسابات سسبي، بريدي موب، و روابط الحسابات للصوص المعروفين في مجال بيع و شراء العملات في
@@ -109,8 +118,22 @@
 
     <!-- <h2 class="dsTbl container">الحسابات الموثوقة</h2><table id="tbvaled" ><thead><tr><th>الحساب البريدي</th><th>الايميل</th><th>إسم الحساب</th></tr></thead><tbody id="bdyvaled"></tbody></table><h2 id="FakePg" class="dsTbl container" style="background-color:red">الحسابات المزيفة</h2><table id="tbFake" ><thead><tr><th>الحساب البريدي</th><th>الايميل</th><th>إسم الحساب</th></tr></thead><tbody id="bdyFake"></tbody></table> 
       -->
-    <!-- <script type="module" src="https://virefie.github.io/outre/main.js"></script> -->
-    <script type="module" src="../outre/main.js"></script>
+    <script type="module" src="https://virefie.github.io/outre/main.js"></script>
+    <!-- <script type="module" src="../outre/main.js"></script> -->
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function (registration) {
+                        console.log('Service worker registered: ', registration.scope);
+                    })
+                    .catch(function (error) {
+                        console.log('Service worker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>
