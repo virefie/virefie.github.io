@@ -356,6 +356,11 @@ header .aboutUs:hover .aboutUsp {
     color: #032b5c;
     cursor: pointer;
 }
+/* @media all and (display-mode: standalone) {
+    .dwnld {
+      display: none;
+    }
+  } */
 .prgf{
     position: absolute;
     width: 100%;
