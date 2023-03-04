@@ -5,8 +5,8 @@
     "background_color": "#172446", 
     "theme_color": "#FFFFFF" ,
     "orientation": "portrait",
-    "scope": "/",
-    "start_url": "/index.min.html",
+    "scope": "https://cnfrmpage.web.app/",
+    "start_url": "https://cnfrmpage.web.app/index.min.html",
     "splash_pages": null,
     "icons": [
         { "src": "https://virefie.github.io/imgs/favicon.ico", "type": "image/x-icon", "sizes": "16x16 32x32" },
