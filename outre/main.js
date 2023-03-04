@@ -196,17 +196,16 @@ window.addEventListener('beforeinstallprompt', (e) => {
 if (os.includes('android') && os.includes('chrome')) {
     gebi('dwnld').className = 'dwnld';
 }
-  // Optionally, send analytics event that PWA install promo was shown.
-  console.log(`'beforeinstallprompt' event was fired.`);
+
 });
 let buttonInstall=gebi('dwnld');
 buttonInstall.addEventListener('click', async () => {
     gebi('dwnld').className ='n';
     deferredPrompt.prompt();
-
+/* 
     const { outcome } = await deferredPrompt.userChoice;
 
-    console.log(`User response to the install prompt: ${outcome}`);
+    console.log(`User response to the install prompt: ${outcome}`); */
     deferredPrompt = null;
   });
 
