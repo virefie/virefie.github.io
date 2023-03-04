@@ -354,6 +354,7 @@ header .aboutUs:hover .aboutUsp {
     border-radius: 10px;
     border: 2px solid #ccc;
     color: #032b5c;
+    cursor: pointer;
 }
 .prgf{
     position: absolute;
