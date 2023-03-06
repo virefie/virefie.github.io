@@ -18,6 +18,7 @@ html {
 body{
     position: relative;
     background-color: #032b5c;
+    
     min-height: 100vh;
 }
 ul {
