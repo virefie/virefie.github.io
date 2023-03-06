@@ -352,7 +352,7 @@ header .aboutUs:hover .aboutUsp {
 .dwnld{
     display: block;
     width: 50%;
-    margin: 50px auto;
+    margin: 10px auto 50px;
     border-radius: 10px;
     cursor: pointer;
 }
