@@ -1,6 +1,6 @@
 
 // Set up a cache name
-const cacheName = 'pwa-cache-v1.27';
+const cacheName = 'pwa-cache-v1.28';
 
 // Set up a list of files to be cached
 const filesToCache = [
