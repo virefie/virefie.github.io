@@ -212,7 +212,7 @@ header .links ul {
     background-color:  var(--section-background);
     position: absolute;
     min-width:  200px;
-    top:  calc(100% + 15px);
+    top:  calc(100% + 7px);
     border-radius:  3px;
     z-index:  1;
     text-align:  center;
