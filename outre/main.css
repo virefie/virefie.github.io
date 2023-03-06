@@ -273,11 +273,10 @@ header .aboutUs:hover .aboutUsp {
     padding: 10px;
 }
 .typeInp label{
-    /* 
-    display: inline-block; */
-    color: white;
+    color: #fff;
     width: 170px;
     height: 25px;
+    width: fit-content;
 }
 .typeInp select{
     border-radius: 3px;
