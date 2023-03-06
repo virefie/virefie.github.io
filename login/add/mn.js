@@ -3,7 +3,7 @@ import { push, update, remove, set } from "https://www.gstatic.com/firebasejs/9.
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 const auth = getAuth(app); const dbRef = ref(database);
 const edtSVG = '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.3 8.925-4.25-4.2 1.4-1.4q.575-.575 1.413-.575.837 0 1.412.575l1.4 1.4q.575.575.6 1.388.025.812-.55 1.387ZM17.85 10.4 7.25 21H3v-4.25l10.6-10.6Z"/></svg>';
-let frm = document.forms[0], idUpdt = '', aSn = { valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId, vlFk, emls = [], fcbs = [], ccps = [];
+let frm = document.forms[0], idUpdt = '', aSn = { valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId, vlFk, emls = [], fcbs = [], ccps = [], sizeOb =ob=> Object.keys(ob).length;;
 
 gebi('logaut').onclick = () => {
   signOut(auth).then(() => {
@@ -103,7 +103,8 @@ frm.onsubmit = (e) => {
     aSn[chPg][stId] = { 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: emailPg, 4: inf }
     uppSt(ref(database, chPg + '/' + stId), aSn[chPg][stId])
       .then(() => {
-        afchHdn('vlpush', 'تم <span id="supmt">الإضافة</span> بنجاح')
+        afchHdn('vlpush', 'تم <span id="setOrUp">الإضافة</span> بنجاح');
+        gebi('nm'+chPg).innerHTML = ' ' + sizeOb(aSn[chPg]) 
 
         frm.reset();
         let childdv;
@@ -127,7 +128,7 @@ frm.onsubmit = (e) => {
         }
         function upAdd() {
           frm.sub.value = 'إضافة';
-          afchHdn('msageCcp', 'التعديل', 'الإضافة')
+          gebi('setOrUp').innerText = 'التعديل';
         }
       })
       .catch(() => { afchHdn('errpush', 'حدث خطأ أعد المحاولة') });
@@ -163,7 +164,7 @@ function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: ema
   emls.push(aSn[3]); fcbs.push(aSn[1]); ccps.push(aSn[2]);
   return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
   <span id="lnk${ccps.length}" class="cntnr">
-  <span  onclick="dltdiv('${chPg}/${stId}')" class="clear" >×</span>
+  <span  onclick="dltdiv('${chPg}','${stId}')" class="clear" >×</span>
   <a href="#input-box" class="mdfSVG" onclick="upVlu('${chPg}','${stId}')">${edtSVG}</a>
   </span>
   <div class="normal">
@@ -190,7 +191,7 @@ function rslt(chPg) {
       let lstPg = '', kys = Object.keys(snp.val());
       kys.sort(cmprNmbr);
       aSn[chPg] = snp.val();
-      gebi(chPg + 'h2').innerHTML += ' ' + kys.length
+      gebi('nm'+chPg).innerHTML = ' ' + kys.length
       kys.forEach(e => {
         lstPg += dvUpdt(chPg, e, aSn[chPg][e]);
       });
@@ -218,12 +219,15 @@ function upVlu(chPg, stId) {
   frm.nmbrCcpPg.value = prNmCcp; frm.emailPg.value = aSn[chPg][stId][3];
   frm.inf.value = aSn[chPg][stId][4];
   frm.chPg.value = chPg; frm.sub.value = 'تعديل'; frm.idUpdt.value = stId;
-  gebi('supmt').innerText = 'التعديل';
 }
 
-function dltdiv(stId) {
-  remove(child(dbRef, stId));
-  gebi(stId).remove();
+function dltdiv(chPg,stId) {
+  remove(child(dbRef, chPg+'/'+stId));
+  gebi(chPg+'/'+stId).remove();
+  delete aSn[chPg][stId];  
+  gebi('nm'+chPg).innerHTML = ' ' + sizeOb(aSn[chPg]) 
+  vUp['lvr' + chPg]++;
+  set(ref(database, 'updatV/vr' + chPg), vUp['lvr' + chPg])
 }
 function opndvs() {
   document.querySelectorAll('.h2lst').forEach(el => {
@@ -232,18 +236,19 @@ function opndvs() {
 
 }
 
+
 window.upVlu = upVlu;
 window.dltdiv = dltdiv;
 //window.opndvs = opndvs;
 document.querySelectorAll('.h2lst').forEach(el => {
-  el.onclick = (e) => {
-    let nxtEl = el.nextElementSibling;
+  let prn = el.parentElement,nxtEl = prn.nextElementSibling;
+  prn.onclick = (e) => {
     if (nxtEl.style.display == "flex") {
       nxtEl.style.display = "none";
-      el.firstElementChild.innerHTML = '▼'
+      el.innerHTML = '▼'
     } else {
       nxtEl.style.display = "flex";
-      el.firstElementChild.innerHTML = '▲';
+      el.innerHTML = '▲';
       setTimeout(() => {
         window.scrollTo(0, e.layerY);
       }, 20);
