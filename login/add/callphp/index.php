@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php
+
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+    $user = filter_var($_POST['username'],   FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'],   FILTER_SANITIZE_EMAIL);
+    $msg = filter_var($_POST['msg'],   FILTER_SANITIZE_STRING);
     
-</body>
-</html>
+    $headers = 'From: ' .$email. '\r\n';
+    $myEml = 'slimani.abdelhadi@outlook.sa';
+    $subject = 'contact user';
+
+    mail($myEml ,$subject ,$msg , $headers)
+
+    
+    header("Location: https://cnfrmpage.firebaseapp.com/call/index.min.html#successfully");
+    
+        exit();
+    
+}

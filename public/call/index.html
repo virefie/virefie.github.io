@@ -73,10 +73,10 @@
         <h2> مرحبا بك </h2>
         <p>إذا كان لديك أي إستفسار أو إقتراح أرسله إلينا عبر استمارة التالية</p>
 
-        <form action="">
+        <form action="appelle.rf.gd" method="post">
             <div class="form-group">
                 <label for="name">الإسم </label>
-                <input type="text" name="name" required autofocus>
+                <input id="name" type="text" name="username" required autofocus>
             </div>
             <div class="form-group">
                 <label for="email">اﻹيميل</label>
@@ -84,14 +84,19 @@
             </div>
             <div class="form-group">
                 <label for="idInfo"> الرسالة </label>
-                <textarea name="inf" id="idInfo" required></textarea>
+                <textarea name="msg" id="idInfo" required></textarea>
             </div>
+            <p id="scsfl" style="display: none; color: green;text-align: right;">تم الارسال بنجاح سيتم الرد عليك فور تلقي الرسالة</p>
             <input type="submit" class="btn" value="أرسل">
         </form>
 
     </div>
 
-    <!-- <script type="module" src="mn.js"></script> -->
+    <script>
+        if(location.href.includes('successfully')){
+            document.getElementById('scsfl').style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
