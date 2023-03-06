@@ -1,0 +1,86 @@
+/* Start Header */
+header {
+    padding:  20px;
+}
+header .container {
+    display:  flex;
+    justify-content:  space-between;
+    align-items:  center;
+}
+header .logo {
+     color: var(--main-color);
+}
+header .links {
+    position:  relative;
+}
+header .links:hover .icon span:nth-child(2) {
+    width:  100%}
+header .links .icon {
+    width:  25px;
+    display:  flex;
+    flex-wrap:  wrap;
+}
+header .links .icon span {
+    background-color:  var(--main-color);
+    margin-bottom:  5px;
+    width:  100%;
+    height:  2px;
+}
+header .links .icon span:nth-child(2) {
+    width:  60%;
+    transition:  var(--main-durachen);
+}
+header .links ul {
+    margin:  0;
+    padding:  0;
+    background-color:  var(--section-background);
+    position: absolute;
+    min-width:  200px;
+    top:  calc(100% + 7px);
+    border-radius:  3px;
+    z-index:  1;
+    text-align:  center;
+    display:  none;
+}
+header .links:hover ul {
+    display:  block;
+}
+header .links ul::before {
+    content:  "";
+    content:  "";
+    position:  absolute;
+    bottom:  100%;
+    left:   5px;
+    border:  10px solid;
+    border-color:  transparent transparent var(--section-background);
+}
+header .links ul li a {
+    display:  block;
+    padding:  15px;
+    color:  #333;
+    transition:  var(--main-durachen);
+}
+header .links ul li a:hover {
+    padding-left:  25px;
+}
+header .links ul li:not(:last-child) a {
+    border-bottom:  1px solid #ddd;
+}
+header .aboutUsp {
+    display:  none;
+    top:  120px;
+    max-width:  calc(100% - 20px);
+    position:  fixed;
+    right:  10px;
+    font-size:  25px;
+    color:  #010b5d;
+    background-color:  #eee;
+    border:  1px solid #ddd;
+    border-radius:  5px;
+    padding:  10px 20px;
+}
+header .aboutUs:hover .aboutUsp {
+    background-color:  #ddd;
+    display:  block;
+}
+/* End Header */
