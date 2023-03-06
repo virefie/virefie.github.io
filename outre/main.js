@@ -196,7 +196,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Update UI notify the user they can install the PWA
   let os= navigator.userAgent.toLocaleLowerCase();
 
-if (os.includes('android') && os.includes('chrome')) {
+if (os.includes('android') || os.includes('ipad') || os.includes('iphone')) {
     gebi('dvdw').className = 'blck';
 }
 
