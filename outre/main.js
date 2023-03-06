@@ -21,7 +21,7 @@ class base { valed = []; Fake = [];
         })) */x 
     };
 };
-let aSn = { valed: [], Fake: []}, vUp = { lvrFake: 0,lvrvaled: 0 },frm = document.forms[0], 
+let aSn = { valed: [], Fake: []}, vUp = { lvrFake: 0,lvrvaled: 0 ,dwAapp:0},frm = document.forms[0], 
     dv = gebi("divplac"), emails = new base, Ccps = new base, fcbs = new base;
 
 const dbRef = ref(database);
@@ -106,36 +106,39 @@ window.onload = ()=>{
 }
 
 function lodngVrsn() {
-    if ( localStorage.vrsnUp != null) {
-        vUp = JSON.parse(localStorage.vrsnUp);
-         get(child(dbRef, "updatV/"))
-         .then(e => {
-            if (vUp.lvrvaled == e.val().vrvaled ) {
-                aSn.valed = JSON.parse(localStorage.lstvaled);
-                stlstPg("valed")
-            }else{
-                vUp.lvrvaled = e.val().vrvaled; 
-                localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-                rslt("valed")
-            }
-            if (vUp.lvrFake == e.val().vrFake) {
-                aSn.Fake = JSON.parse(localStorage.lstFake);
-                stlstPg("Fake")
-            } else {
-                vUp.lvrFake = e.val().vrFake;
-                localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-                rslt("Fake");
-            }
-           
-        });
-    }else{
-        get(child(dbRef, "updatV/")).then(e => {
-            vUp.lvrFake = e.val().vrFake; 
-            vUp.lvrvaled = e.val().vrvaled;
-            localStorage.setItem("vrsnUp", JSON.stringify(vUp)); 
-            rslt("valed"); rslt("Fake")
-        })
-    }
+    get(child(dbRef, "updatV/"))
+    .then(e => {
+        vUp.dwAapp = e.val().dwAapp;
+        if ( localStorage.vrsnUp != null) {
+            vUp = JSON.parse(localStorage.vrsnUp);
+            
+                if (vUp.lvrvaled == e.val().vrvaled ) {
+                    aSn.valed = JSON.parse(localStorage.lstvaled);
+                    stlstPg("valed")
+                }else{
+                    vUp.lvrvaled = e.val().vrvaled; 
+                    localStorage.setItem("vrsnUp", JSON.stringify(vUp));
+                    rslt("valed")
+                }
+                if (vUp.lvrFake == e.val().vrFake) {
+                    aSn.Fake = JSON.parse(localStorage.lstFake);
+                    stlstPg("Fake")
+                } else {
+                    vUp.lvrFake = e.val().vrFake;
+                    localStorage.setItem("vrsnUp", JSON.stringify(vUp));
+                    rslt("Fake");
+                }
+            
+            /* }); */
+        }else{
+        /*  get(child(dbRef, "updatV/")).then(e => { */
+                vUp.lvrFake = e.val().vrFake; 
+                vUp.lvrvaled = e.val().vrvaled;
+                localStorage.setItem("vrsnUp", JSON.stringify(vUp)); 
+                rslt("valed"); rslt("Fake")
+        
+        }
+    })
 }
 
  frm.onsubmit = (e => {
@@ -178,14 +181,14 @@ window.hiding = hiding;
 /* instalation app */
 let deferredPrompt;
 /* if app is instal */
-window.addEventListener('appinstalled', () => {
+/* window.addEventListener('appinstalled', () => {
     // Hide the app-provided install promotion
     gebi('dwnld').className ='n';
     // Clear the deferredPrompt so it can be garbage collected
-    deferredPrompt = null;
+    deferredPrompt = null; */
     /* // Optionally, send analytics event to indicate successful install
     console.log('PWA was installed'); */
-  });
+ /*  }); */
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
@@ -194,14 +197,18 @@ window.addEventListener('beforeinstallprompt', (e) => {
   let os= navigator.userAgent.toLocaleLowerCase();
 
 if (os.includes('android') && os.includes('chrome')) {
-    gebi('dwnld').className = 'dwnld';
+    gebi('dvdw').className = 'blck';
 }
 
 });
+
 let buttonInstall=gebi('dwnld');
 buttonInstall.addEventListener('click', async () => {
-    gebi('dwnld').className ='n';
+    gebi('dvdw').className ='n';
     deferredPrompt.prompt();
+    /* if (vUp.dwAapp >0) {
+        
+    } */
 /* 
     const { outcome } = await deferredPrompt.userChoice;
 

@@ -26,6 +26,9 @@ ul {
 a {
     text-decoration:  none;
 }
+.blck{
+    display: block;
+}
 .container {
     padding-left:  15px;
     padding-right:  15px;
