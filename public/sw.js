@@ -7,7 +7,8 @@ const filesToCache = [
   '/',
   'index.min.html',
   'https://virefie.github.io/outre/main.js',
-  'https://virefie.github.io/outre/main.min.css'
+  'https://virefie.github.io/outre/main.min.css',
+  'https://virefie.github.io/outre/header.css'
 ];
 
 
