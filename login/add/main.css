@@ -248,7 +248,7 @@ form .form-group input[type=radio] {
 }
 
 form .form-group input:focus,
-textarea {
+textarea:focus {
     border-color: #124ce7;
     outline: none;
     box-shadow: 0 0 12px #bbd3ff;
@@ -256,7 +256,7 @@ textarea {
 
 
 form .form-group input:valid,
-textarea {
+textarea:valid {
     border-color: #124ce7;
     background: #e4edff;
 }

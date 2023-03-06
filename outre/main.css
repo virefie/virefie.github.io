@@ -174,8 +174,9 @@ a {
     .dvPlc {
     left:  10px;
 }
+}
 /* Start Header */
-}header {
+header {
     padding:  20px;
 }
 header .container {
@@ -184,7 +185,7 @@ header .container {
     align-items:  center;
 }
 header .logo {
-     color: var(--main-color);;
+     color: var(--main-color);
 }
 header .links {
     position:  relative;
