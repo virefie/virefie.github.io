@@ -35,6 +35,7 @@ header .links .icon {
     width:  25px;
     display:  flex;
     flex-wrap:  wrap;
+    justify-content: flex-end;
 }
 header .links .icon span {
     background-color:  var(--main-color);
