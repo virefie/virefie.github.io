@@ -101,13 +101,13 @@ a {
     display:  none;
     flex-wrap:  wrap;
     align-content:  center;
+    justify-content: center;
     position:  fixed;
     background-size:  cover;
     z-index:  1;
 }
 .dvPlc {
     width: calc(100% - 30px);
-    left:  10px;
     position:  relative;
     z-index:  2;
     text-align:  right;
