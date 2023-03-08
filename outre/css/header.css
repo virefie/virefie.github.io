@@ -102,7 +102,7 @@ header .aboutUs:hover .aboutUsp {
     display:  block;
 }
 
-.active{
+.active ,header .links ul li:hover {
     color: white;
     background-color: #4a92ea;
 }
