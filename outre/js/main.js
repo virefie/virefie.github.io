@@ -25,7 +25,7 @@ class base {
 let aSn = { valed: [], Fake: [] }, vUp = { lvrFake: 0, lvrvaled: 0, dwAapp: 0 }, frm = document.forms[0],
     dv = gebi("divplac"), emails = new base, Ccps = new base, fcbs = new base;
 
-document.querySelector('header').style.display = 'none';
+
 const dbRef = ref(database);
 dv.addEventListener("click", e => {
     e.stopPropagation()
@@ -61,7 +61,7 @@ function stlstPg(e) {
     if ("Fake" == e) {
         gebi("lod").className = "n";
         gebi("plWt").className = "n";
-        document.querySelector('header').style.display = 'block';
+        //document.querySelector('header').style.display = 'block';
     }
 
 }
