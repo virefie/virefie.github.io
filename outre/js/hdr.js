@@ -1,4 +1,4 @@
-document.querySelector('head').innerHTML = 
+document.querySelector('head').innerHTML += 
 '<link rel="stylesheet" href="https://virefie.github.io/outre/css/header.css">';
 let hstNm = window.location.hostname, path = window.location.pathname,
     fork = document.querySelector('header').innerHTML =
