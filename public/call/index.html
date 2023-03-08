@@ -10,7 +10,6 @@
     <link rel="icon" href="https://virefie.github.io/imgs/favicon.ico" sizes="any">
     <!-- end pour app -->
     <link rel="stylesheet" href="https://virefie.github.io/login/main.min.css">
-    <link rel="stylesheet" href="https://virefie.github.io/outre/header.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://virefie.github.io/imgs/logo2.jpg">
     <!-- Start google ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566985769016942"
@@ -53,27 +52,9 @@
 </head>
 
 <body style="background-image:none;background-color: #032b5c;display: block">
-    <header>
-        <div class="container">
-            <h4 class="logo"><a href="../" style="color:var(--main-color)">مكافحة النصب الإلكتروني</a></h4>
-            <div class="links">
-                <span class="icon"><span></span><span></span><span></span>
-                </span>
-                <ul>
-                    <li>
-                        <a href="../" class="aboutUs"> الصفحة الرئيسية</a>
-                    </li>
-                    <li>
-                        <a href="../aboutUs/index.min.html"> من نحن</a>
-                    </li>
-                    <li>
-                        <a href="../cnfdnt/index.min.html">  سياسة الخصوصية</a>
-                    </li>
-                </ul>
 
-            </div>
-        </div>
-    </header>
+    <header></header>
+
     <!-- Start google ads -->
     <ins class="adsbygoogle"
      style="display:block"
@@ -87,7 +68,7 @@
         <h2> مرحبا بك </h2>
         <p>إذا كان لديك أي إستفسار أو إقتراح أرسله إلينا عبر استمارة التالية</p>
 
-        <form action="https://cnfrmpage.000webhostapp.com/callCnfrm" method="post">
+        <form action="https://cnfrmpage.000webhostapp.com/callCnfrm/index.php" method="post">
             <div class="form-group">
                 <label for="name">الإسم </label>
                 <input id="name" type="text" name="username" required autofocus>
@@ -106,6 +87,7 @@
 
     </div>
 
+    <script type="module" src="https://virefie.github.io/outre/js/hdr.js"></script>
     <script>
         if(location.href.includes('successfully')){
             document.getElementById('scsfl').style.display = 'block';

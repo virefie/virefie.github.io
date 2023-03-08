@@ -101,4 +101,9 @@ header .aboutUs:hover .aboutUsp {
     background-color:  #ddd;
     display:  block;
 }
+
+.active{
+    color: white;
+    background-color: teal;
+}
 /* End Header */

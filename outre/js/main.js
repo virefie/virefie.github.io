@@ -1,4 +1,4 @@
-import { database, ref, child, get, gebi} from "../main.js";
+import { database, ref, child, get, gebi} from "../../main.js";
 class base { valed = []; Fake = [];
     getInd (e) {
         let ind = this.valed.indexOf(e);
