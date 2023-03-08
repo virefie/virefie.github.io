@@ -14,6 +14,25 @@ ul {
 a {
     text-decoration: none;
 }
+.container {
+    padding-left:  15px;
+    padding-right:  15px;
+    margin-left: auto;
+    margin-right:  auto;
+}
+@media (min-width:768px) {
+    .container {
+    width:  750px;
+}
+}@media (min-width:992px) {
+    .container {
+    width:  970px;
+}
+}@media (min-width:1200px) {
+    .container {
+    width:  1170px;
+}
+ }
 /* Start Header */
 header {
     padding:  20px;
