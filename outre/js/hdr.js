@@ -1,7 +1,7 @@
 let qrs = el => document.querySelector(el), hdr = document.createElement('header');
 
 qrs('head').innerHTML += '<link rel="stylesheet" href="https://virefie.github.io/outre/css/header.css">';
-hdr.style.display = 'none';
+//hdr.style.display = 'none';
 
 
 let orgn = location.origin, path = window.location.pathname;
