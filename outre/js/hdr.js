@@ -15,7 +15,7 @@ let orgn = location.origin, path = window.location.pathname,
                             <a href="${orgn}/call/index.min.html">اتصل بنا</a>
                         </li>
                         <li id = "/aboutus">
-                            <a href="${orgn}/aboutUs/index.min.html"> من نحن</a>
+                            <a href="${orgn}/aboutus/index.min.html"> من نحن</a>
                         </li>
                         <li id="/cnfdnt">
                             <a href="${orgn}/cnfdnt/index.min.html"> سياسة الخصوصية</a>
