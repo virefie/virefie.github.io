@@ -123,7 +123,7 @@ header .aboutUs:hover .aboutUsp {
     display:  block;
 }
 
-header .links ul li a.active {
+.active {
     color: white;
     background-color: #4a92ea;
 }
