@@ -1,6 +1,6 @@
 
 // Set up a cache name
-const cacheName = 'pwa-cache-v1.46';
+const cacheName = 'pwa-cache-v1.47';
 
 // Set up a list of files to be cached
 const filesToCache = [
@@ -49,6 +49,6 @@ self.addEventListener('activate', event => {
         })
       );
     })
-    .then(() => self.clients.claim())
+      .then(() => self.clients.claim())
   );
 });
