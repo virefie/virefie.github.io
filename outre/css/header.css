@@ -80,6 +80,8 @@ header .links ul li a {
 }
 header .links ul li a:hover {
     padding-left:  25px;
+    color: white;
+    background-color: #4a92ea;
 }
 header .links ul li:not(:last-child) a {
     border-bottom:  1px solid #ddd;
@@ -102,7 +104,7 @@ header .aboutUs:hover .aboutUsp {
     display:  block;
 }
 
-.active ,header .links ul li:hover {
+.active {
     color: white;
     background-color: #4a92ea;
 }
