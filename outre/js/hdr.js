@@ -1,6 +1,6 @@
 document.querySelector('head').innerHTML += 
 '<link rel="stylesheet" href="https://virefie.github.io/outre/css/header.css">';
-let hstNm = window.location.hostname, path = window.location.pathname,
+let orgn = location.origin, path = window.location.pathname,
     fork = document.querySelector('header').innerHTML =
             `<div class="container">
                 <h4 class="logo">مكافحة النصب الإلكتروني</h4>
@@ -9,16 +9,16 @@ let hstNm = window.location.hostname, path = window.location.pathname,
                     </span>
                     <ul>
                         <li id= "/">
-                            <a href="${hstNm}" class="aboutUs"> الصفحة الرئيسية</a>
+                            <a href="${orgn}" class="aboutUs"> الصفحة الرئيسية</a>
                         </li>
                         <li id = "/call">
-                            <a href="${hstNm}/call/index.min.html">اتصل بنا</a>
+                            <a href="${orgn}/call/index.min.html">اتصل بنا</a>
                         </li>
                         <li id = "/aboutus">
-                            <a href="${hstNm}/aboutUs/index.min.html"> من نحن</a>
+                            <a href="${orgn}/aboutUs/index.min.html"> من نحن</a>
                         </li>
                         <li id="/cnfdnt">
-                            <a href="${hstNm}/cnfdnt/index.min.html"> سياسة الخصوصية</a>
+                            <a href="${orgn}/cnfdnt/index.min.html"> سياسة الخصوصية</a>
                         </li>
                     </ul>
                 </div>
