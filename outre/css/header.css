@@ -95,6 +95,7 @@ header .links ul li a {
     display:  block;
     padding:  15px;
     color:  #333;
+    font-weight: 600;
     transition:  var(--main-durachen);
 }
 header .links ul li a:hover {
