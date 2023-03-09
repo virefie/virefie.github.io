@@ -104,5 +104,7 @@
         "sortAttributes": false,
         "sortClassName": false,
         "useShortDoctype": false
-    }
+    },
+    "breadcrumbs.showKeys": true,
+    "outline.showKeys": true
 }
