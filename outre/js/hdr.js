@@ -1,6 +1,6 @@
 let qrs = el => document.querySelector(el), hdr = document.createElement('header');
 
-qrs('head').innerHTML += '<link rel="stylesheet" href="https://virefie.github.io/outre/css/header.css">';
+qrs('head').innerHTML += '<link rel="stylesheet" href="https://virefie.github.io/outre/css/header.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566985769016942" crossorigin="anonymous"></script> ';
 //hdr.style.display = 'none';
 
 
