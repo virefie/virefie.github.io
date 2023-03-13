@@ -28,5 +28,5 @@ hdr.innerHTML =
     </div>`;
 qrs('body').prepend(hdr);
 
-path = path != ('/' && '/index.min.html') ? path.slice(0, path.indexOf('/index')) : '/';
+path = path != '/' && path !='/index.min.html' ? path.slice(0, path.indexOf('/index')) : '/';
 document.getElementById(path).classList.add('active');
