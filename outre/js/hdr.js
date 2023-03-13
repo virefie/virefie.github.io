@@ -1,7 +1,6 @@
 let qrs = el => document.querySelector(el), hdr = document.createElement('header');
 
 qrs('head').innerHTML += '<link rel="stylesheet" href="https://virefie.github.io/outre/css/header.css">';
-//hdr.style.display = 'none';
 
 
 let orgn = location.origin, path = window.location.pathname;
@@ -29,6 +28,5 @@ hdr.innerHTML =
     </div>`;
 qrs('body').prepend(hdr);
 
-if (path.length > 1) { path = path.slice(0, path.indexOf('/index')) };
-
+path = path != ('/' && '/index.min.html') ? path.slice(0, path.indexOf('/index')) : '/';
 document.getElementById(path).classList.add('active');
