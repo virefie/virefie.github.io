@@ -145,16 +145,18 @@ function lodngVrsn() {
 }
 
 frm.onsubmit = (e => {
+    e.preventDefault(); frm.srch.blur();
     function t() {
         gebi("errCcp").style.display = "block", setTimeout(() => {
             gebi("errCcp").style.display = "none"
         }, 2e3)
     }
-    e.preventDefault(); frm.srch.blur();
+
     frm.srch.value = frm.srch.value.trim();
     let vl = frm.srch.value, tpInp = gebi("tpInp").value, l = vl.indexOf("facebook.com"),
         s = vl.length;
-
+    if (vl == '') { console.log(vl); return 0 }
+    console.log('fat', vl)
     if (tpInp == 'rib' && 0 == vl.indexOf("0079999900") && !isNaN(vl) && 20 == s) {
         vl = vl.slice(10, 20); afchRslt(Ccps.getInd(vl));
         return 0
