@@ -127,7 +127,6 @@ function lodngVrsn() {
                      rslt("valed")
                  } */
                 function tcheck(pr) {
-                    console.log(e.val()['vr' + pr]);
                     if (vUp['lvr' + pr] == e.val()['vr' + pr]) {
                         if (localStorage['lst' + pr]) {
                             aSn[pr] = JSON.parse(localStorage['lst' + pr]);
