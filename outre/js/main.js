@@ -111,25 +111,35 @@ window.onload = () => {
 function lodngVrsn() {
     get(child(dbRef, "updatV/"))
         .then(e => {
-            vUp.dwAapp = e.val().dwAapp;
             if (localStorage.vrsnUp != null) {
                 vUp = JSON.parse(localStorage.vrsnUp);
+                tcheck("valed");
+                tcheck("Fake");
+                /*  if (vUp.lvrvaled == e.val().vrvaled) {
+                     if (localStorage.lstvaled) {
+                         aSn.valed = JSON.parse(localStorage.lstvaled);
+                         stlstPg("valed")
+                     }
+ 
+                 } else {
+                     vUp.lvrvaled = e.val().vrvaled;
+                     localStorage.setItem("vrsnUp", JSON.stringify(vUp));
+                     rslt("valed")
+                 } */
+                function tcheck(pr) {
+                    console.log(e.val()['vr' + pr]);
+                    if (vUp['lvr' + pr] == e.val()['vr' + pr]) {
+                        if (localStorage['lst' + pr]) {
+                            aSn[pr] = JSON.parse(localStorage['lst' + pr]);
+                           // console.log(localStorage['lst' + pr]);
+                            stlstPg(pr)
+                        }
 
-                if (vUp.lvrvaled == e.val().vrvaled) {
-                    aSn.valed = JSON.parse(localStorage.lstvaled);
-                    stlstPg("valed")
-                } else {
-                    vUp.lvrvaled = e.val().vrvaled;
-                    localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-                    rslt("valed")
-                }
-                if (vUp.lvrFake == e.val().vrFake) {
-                    aSn.Fake = JSON.parse(localStorage.lstFake);
-                    stlstPg("Fake")
-                } else {
-                    vUp.lvrFake = e.val().vrFake;
-                    localStorage.setItem("vrsnUp", JSON.stringify(vUp));
-                    rslt("Fake");
+                    } else {
+                        vUp['lvr' + pr] = e.val()['vr' + pr];
+                        localStorage.setItem("vrsnUp", JSON.stringify(vUp));
+                        rslt(pr)
+                    }
                 }
 
                 /* }); */
@@ -155,8 +165,7 @@ frm.onsubmit = (e => {
     frm.srch.value = frm.srch.value.trim();
     let vl = frm.srch.value, tpInp = gebi("tpInp").value, l = vl.indexOf("facebook.com"),
         s = vl.length;
-    if (vl == '') { console.log(vl); return 0 }
-    console.log('fat', vl)
+    if (vl == '') { return 0 }
     if (tpInp == 'rib' && 0 == vl.indexOf("0079999900") && !isNaN(vl) && 20 == s) {
         vl = vl.slice(10, 20); afchRslt(Ccps.getInd(vl));
         return 0
