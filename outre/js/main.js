@@ -19,11 +19,11 @@ class base {
         } : (ind = 0, {
             vl: "Uncertain",
             in: ind
-        })) */x
+        })) */
     };
 };
 let aSn = { valed: [], Fake: [] }, vUp = { lvrFake: 0, lvrvaled: 0, dwAapp: 0 }, frm = document.forms[0],
-    dv = gebi("divplac"), emails = new base, Ccps = new base, fcbs = new base;
+    ready=false, dv = gebi("divplac"), emails = new base, Ccps = new base, fcbs = new base;
 
 
 const dbRef = ref(database);
@@ -61,6 +61,7 @@ function stlstPg(e) {
     if ("Fake" == e) {
         gebi("lod").className = "n";
         gebi("plWt").className = "n";
+        ready=true;
         //document.querySelector('header').style.display = 'block';
     }
 
@@ -130,7 +131,7 @@ function lodngVrsn() {
                     if (vUp['lvr' + pr] == e.val()['vr' + pr]) {
                         if (localStorage['lst' + pr]) {
                             aSn[pr] = JSON.parse(localStorage['lst' + pr]);
-                           // console.log(localStorage['lst' + pr]);
+                            // console.log(localStorage['lst' + pr]);
                             stlstPg(pr)
                         }
 
@@ -155,6 +156,10 @@ function lodngVrsn() {
 
 frm.onsubmit = (e => {
     e.preventDefault(); frm.srch.blur();
+    if (!ready) {
+        alert('حدث خطأ أعد المحاولة');
+        return 0;
+    }
     function t() {
         gebi("errCcp").style.display = "block", setTimeout(() => {
             gebi("errCcp").style.display = "none"
