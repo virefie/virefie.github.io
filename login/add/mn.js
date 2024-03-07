@@ -264,6 +264,15 @@ function afchHdn(el, title, ttl2 = '') {
 }
 
 
+let ccp2=[];
+for(let k in ccps){
+  if(ccp2.indexOf(k)>-1){
+    gebi(allPages).innerHTML += "/n " + k;
+  }else{
+    ccp2.push(k);
+  }
+}
+
 /*   let allCcp =''
 ,arrAllC=allCcp.split(' '),call=0;
 //set(ref(database, 'updatV/vrFake'), vUp.lvrvaled);
