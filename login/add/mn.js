@@ -137,7 +137,7 @@ frm.onsubmit = (e) => {
   function isSet() {
     let inde = emls.indexOf(emailPg), indFb = fcbs.indexOf(lienPg), indCcp = ccps.indexOf(nmbrCcpPg),
       lnk = hrf => ` هدا الحساب موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> `;
-    if (nmbrCcpPg && inde == indFb && indFb == indCcp && indCcp > -1) {
+    if (/*nmbrCcpPg && inde == indFb && indFb == indCcp &&*/ indCcp > -1) {
       afchHdn('errpush', lnk(indCcp + 1)); opndvs();
     }
     /*  if (emailPg && ind  > 0 ) {
