@@ -135,10 +135,19 @@ frm.onsubmit = (e) => {
   }
   /*  */
   function isSet() {
+    let ccp2=[];
+for(let k in ccps){
+  if(ccp2.indexOf(k)>-1){
+    gebi(allPages).innerHTML += "/n " + k;
+  }else{
+    ccp2.push(k);
+  }
+}
     let inde = emls.indexOf(emailPg), indFb = fcbs.indexOf(lienPg), indCcp = ccps.indexOf(nmbrCcpPg),
       lnk = hrf => ` هدا الحساب موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> `;
     if (/*nmbrCcpPg && inde == indFb && indFb == indCcp &&*/ indCcp > -1) {
       afchHdn('errpush', lnk(indCcp + 1)); opndvs();
+      return true 
     }
     /*  if (emailPg && ind  > 0 ) {
        afchHdn('msageEmail',lnk(ind,' اﻹميل '));opndvs();
@@ -264,14 +273,8 @@ function afchHdn(el, title, ttl2 = '') {
 }
 
 
-let ccp2=[];
-for(let k in ccps){
-  if(ccp2.indexOf(k)>-1){
-    gebi(allPages).innerHTML += "/n " + k;
-  }else{
-    ccp2.push(k);
-  }
-}
+
+ 
 
 /*   let allCcp =''
 ,arrAllC=allCcp.split(' '),call=0;
