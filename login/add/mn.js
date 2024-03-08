@@ -136,7 +136,7 @@ frm.onsubmit = (e) => {
   /*  */
   function isSet() {
     let ccp2=[];
-for(let k,k<ccps.length , k++){
+for(let k=0,k<ccps.length , k++){
   if(ccp2.indexOf(ccps[k])>-1){
     gebi(allPages).innerHTML += "/n " + ccps[k];
   }else{
