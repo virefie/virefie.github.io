@@ -136,11 +136,11 @@ frm.onsubmit = (e) => {
   /*  */
   function isSet() {
     let ccp2=[];
-    ccps.forEach( e=>{
-      if(ccp2.indexOf(e)>-1){
-          gebi(allPages).innerHTML += "/n " + e;
+    ccps.forEach( el =>{
+      if(ccp2.indexOf(el)>-1){
+          gebi(allPages).innerHTML += "/n " + el;
       }else{
-          ccp2.push(e);
+          ccp2.push(el);
       }
     }
       
