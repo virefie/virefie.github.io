@@ -181,11 +181,11 @@ function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: ema
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : ''; 
   emls.push(aSn[3]); fcbs.push(aSn[1]); ccps.push(aSn[2]);
 
-     if(ccp3.indexOf(aSn[2])<0){
+    /* if(ccp3.indexOf(aSn[2])<0){
        ccp3.push(aSn[2]);
          return '<div> jdida </div>';
       }
-
+         */
   
   
   return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
