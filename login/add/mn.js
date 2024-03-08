@@ -136,14 +136,20 @@ frm.onsubmit = (e) => {
   /*  */
   function isSet() {
     let ccp2=[];
-for(let k=0,k<ccps.length , k++){
-  if(ccp2.indexOf(ccps[k])>-1){
-    gebi(allPages).innerHTML += "/n " + ccps[k];
-  }else{
-    ccp2.push(ccps[k]);
-  }
-  gebi(allPages).innerHTML += "/n" + ccp2.length;
-}
+    ccps.forEach( e=>{
+      if(ccp2.indexOf(e)>-1){
+          gebi(allPages).innerHTML += "/n " + e;
+      }else{
+          ccp2.push(e);
+      }
+    }
+      
+    )
+
+    gebi(allPages).innerHTML += "/n" + ccp2.length;
+
+
+    
     let inde = emls.indexOf(emailPg), indFb = fcbs.indexOf(lienPg), indCcp = ccps.indexOf(nmbrCcpPg),
       lnk = hrf => ` هدا الحساب موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> `;
     if (/*nmbrCcpPg && inde == indFb && indFb == indCcp &&*/ indCcp > -1) {
