@@ -3,7 +3,8 @@ import { push, update, remove, set } from "https://www.gstatic.com/firebasejs/9.
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 const auth = getAuth(app); const dbRef = ref(database);
 const edtSVG = '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.3 8.925-4.25-4.2 1.4-1.4q.575-.575 1.413-.575.837 0 1.412.575l1.4 1.4q.575.575.6 1.388.025.812-.55 1.387ZM17.85 10.4 7.25 21H3v-4.25l10.6-10.6Z"/></svg>';
-let frm = document.forms[0], idUpdt = '', aSn = { valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId, vlFk, emls = [], fcbs = [], ccps = [], sizeOb =ob=> Object.keys(ob).length;;
+let frm = document.forms[0], idUpdt = '', aSn = { valed: {}, Fake: {} }, vUp = { lvrvaled: 0, lvrFake: 0 }, stId, vlFk, emls = [], fcbs = [], ccps = [],ccp3=[], sizeOb =ob=> Object.keys(ob).length;
+;
 
 gebi('logaut').onclick = () => {
   signOut(auth).then(() => {
@@ -179,6 +180,14 @@ function dvUpdt(chPg, stId, aSn) {//{ 0: namePg, 1: lienPg, 2: nmbrCcpPg, 3: ema
   let fblien = aSn[1].length > 0 ? 'href="https://www.facebook.com/' + aSn[1] + '" target="_blank"' : '',
     prNmCcp = aSn[2].length > 0 ? '0079999900' + aSn[2] : ''; 
   emls.push(aSn[3]); fcbs.push(aSn[1]); ccps.push(aSn[2]);
+
+     if(ccp3.indexOf(aSn[2])<0){
+       ccp3.push(aSn[2]);
+         return '<div> jdida </div>';
+      }
+
+  
+  
   return `<div id="${chPg}/${stId}" class="dvPlc ${chPg}">
   <span id="lnk${ccps.length}" class="cntnr">
   <span  onclick="dltdiv('${chPg}','${stId}')" class="clear" >×</span>
