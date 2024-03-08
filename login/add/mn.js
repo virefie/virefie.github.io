@@ -137,10 +137,10 @@ frm.onsubmit = (e) => {
   function isSet() {
     let ccp2=[];
 for(let k,k<ccps.length , k++){
-  if(ccp2.indexOf(k)>-1){
-    gebi(allPages).innerHTML += "/n " + k;
+  if(ccp2.indexOf(ccps[k])>-1){
+    gebi(allPages).innerHTML += "/n " + ccps[k];
   }else{
-    ccp2.push(k);
+    ccp2.push(ccps[k]);
   }
   gebi(allPages).innerHTML += "/n" + ccp2.length;
 }
