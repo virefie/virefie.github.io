@@ -142,6 +142,7 @@ for(let k in ccps){
   }else{
     ccp2.push(k);
   }
+  gebi(allPages).innerHTML += "/n" + ccp2.length;
 }
     let inde = emls.indexOf(emailPg), indFb = fcbs.indexOf(lienPg), indCcp = ccps.indexOf(nmbrCcpPg),
       lnk = hrf => ` هدا الحساب موجود من قبل <a href="#lnk${hrf}" onclick="">إذهب إليه </a><br> `;
