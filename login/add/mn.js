@@ -139,7 +139,7 @@ frm.onsubmit = (e) => {
     ccps.forEach( (el,ind) =>{
       if(ccp2.indexOf(el)>-1){
         ind++;
-          gebi("allPages").innerHTML += '\n <a href="#lnk'+ind + '">  ' + el +'</a>';
+          gebi("allPages").innerHTML += '\n <a href="#lnk'+ind + '"  "style=color:white">  ' + el +'</a>';
       }else{
           ccp2.push(el);
       }
