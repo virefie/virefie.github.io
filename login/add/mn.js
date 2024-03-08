@@ -146,7 +146,7 @@ frm.onsubmit = (e) => {
       
     ) 
 
-    gebi(allPages).innerHTML += "/n" + ccp2.length;
+    gebi("allPages").innerHTML += "/n" + ccp2.length;
 
 
     
