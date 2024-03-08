@@ -136,9 +136,10 @@ frm.onsubmit = (e) => {
   /*  */
   function isSet() {
     let ccp2=[];
-    ccps.forEach( el =>{
+    ccps.forEach( (el,ind) =>{
       if(ccp2.indexOf(el)>-1){
-          gebi("allPages").innerHTML += "/n " + el;
+        ind++;
+          gebi("allPages").innerHTML += '\n <a href="#lnk'+ind + '">  ' + el +"</a>;
       }else{
           ccp2.push(el);
       }
@@ -146,7 +147,7 @@ frm.onsubmit = (e) => {
       
     ) 
 
-    gebi("allPages").innerHTML += "/n" + ccp2.length;
+    gebi("allPages").innerHTML += "\n" + ccp2.length;
 
 
     
