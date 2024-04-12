@@ -23,7 +23,7 @@ class base {
     };
 };
 let aSn = { valed: [], Fake: [] }, vUp = { lvrFake: 0, lvrvaled: 0, dwAapp: 0 }, frm = document.forms[0],
-    ready=false, dv = gebi("divplac"), emails = new base, Ccps = new base, fcbs = new base;
+    ready = false, dv = gebi("divplac"), emails = new base, Ccps = new base, fcbs = new base;
 
 
 const dbRef = ref(database);
@@ -61,7 +61,7 @@ function stlstPg(e) {
     if ("Fake" == e) {
         gebi("lod").className = "n";
         gebi("plWt").className = "n";
-        ready=true;
+        ready = true;
         //document.querySelector('header').style.display = 'block';
     }
 
@@ -72,7 +72,7 @@ function afchRslt(e) {
     gebi("cntnr").style.display = "flex";
     setTimeout(() => {
         dv.className += " opPlc"
-    }, 0);
+    }, 5);
     if (e.vl == "Uncertain") {
         dv.innerHTML = '<span class="clear" onclick="hiding()">×</span>\n       <div class="Uncertain hidplac">\n      <h2>لم يتم التأكد من مصداقية هد الحساب</h2>\n      <span> ليس لدينا معلوما حول هذا الحساب يرجى مساعدتنا عبر صفحتنا على الفيسبوك </span><a href="https://www.facebook.com/profile.php?id=100089115259293" >  مكافحة النصب الإلكتروني</a></div> ';
         return 0
