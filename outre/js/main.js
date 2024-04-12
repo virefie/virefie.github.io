@@ -157,7 +157,7 @@ function lodngVrsn() {
 frm.onsubmit = (e => {
     e.preventDefault(); frm.srch.blur();
     if (!ready) {
-        alert('حدث خطأ أعد المحاولة');
+        alert('يتم تحميل البيانات  إنتظر قليلا');
         return 0;
     }
     function t() {
